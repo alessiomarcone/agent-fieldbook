@@ -6,6 +6,8 @@
 
 Knowledge base pronta per **Claude Projects**, **Claude Code** e **Claude Skills**, costruita esclusivamente da fonti ufficiali Anthropic: corsi Skilljar, tutorial claude.com, documentazione e canale YouTube.
 
+**➜ [Esempi di utilizzo pratici](EXAMPLES.md)** — installazione, domande tipo, percorsi di studio, setup Project, pipeline YouTube.
+
 ## Contenuto
 
 - `knowledge-base.md` — mappa completa, learning path e link catalogati.
