@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Generated YouTube catalog (regenerate with update_youtube_catalog.py)
+youtube_videos.csv
+youtube_videos.md
+youtube_archive/
+
+# Downloaded transcripts — PERSONAL USE ONLY, never commit or redistribute.
+# Video transcripts are copyrighted content owned by Anthropic/YouTube uploaders.
+transcripts/
+*.vtt
+*.srt
+
+# OS
+.DS_Store
