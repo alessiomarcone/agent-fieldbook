@@ -21,5 +21,5 @@ Questo repository contiene una knowledge base ufficiale per usare Claude in modo
 - `knowledge-base.md`
 - `courses.csv`
 - `tutorials.csv`
-- `YOUTUBE.md`
+- `youtube.md`
 - `sources.md`

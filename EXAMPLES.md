@@ -62,8 +62,8 @@ awk -F',' '$3 ~ /Base/ {print $2, "—", $4}' courses.csv
 ## 4. Configurare un Claude Project (claude.ai)
 
 1. Su claude.ai crea un Project, es. **Claude Operating System**.
-2. Carica come Project knowledge: `knowledge-base.md`, `courses.csv`, `tutorials.csv`, `YOUTUBE.md`, `sources.md`.
-3. Incolla il contenuto di `CLAUDE_PROJECT_INSTRUCTIONS.md` nelle istruzioni del Project.
+2. Carica come Project knowledge: `knowledge-base.md`, `courses.csv`, `tutorials.csv`, `youtube.md`, `sources.md`.
+3. Incolla il contenuto di `claude-project-instructions.md` nelle istruzioni del Project.
 4. Avvia la prima chat incollando `session-bootstrap-prompt.md`.
 
 Da quel momento ogni chat del Project risponde su funzionalità Claude citando le fonti ufficiali invece di andare a memoria.
@@ -97,7 +97,7 @@ python download_youtube_transcripts.py --category "Claude Code"
 # 2. Apri Claude Code nella cartella e chiedi:
 ```
 
-> Prendi il transcript in transcripts/<video>.md e produci una knowledge card seguendo VIDEO_KNOWLEDGE_CARD_PROMPT.md, valida rispetto a video_knowledge_card.schema.json.
+> Prendi il transcript in transcripts/<video>.md e produci una knowledge card seguendo video-knowledge-card-prompt.md, valida rispetto a video_knowledge_card.schema.json.
 
 Risultato: scheda strutturata con procedura passo-passo, prompt riutilizzabili, errori da evitare e segnalazione delle informazioni potenzialmente superate. Salvala in `skill/claude-power-user/references/` per renderla parte della knowledge base.
 

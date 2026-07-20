@@ -7,7 +7,7 @@
   "tutorials": 30,
   "youtube_channel": "https://www.youtube.com/@anthropic-ai",
   "entry_points": {
-    "project": "CLAUDE_PROJECT_INSTRUCTIONS.md",
+    "project": "claude-project-instructions.md",
     "session": "session-bootstrap-prompt.md",
     "claude_code": "CLAUDE.md",
     "skill": "skill/claude-power-user/SKILL.md"
@@ -15,8 +15,8 @@
   "youtube_pipeline": {
     "catalog": "update_youtube_catalog.py",
     "transcripts": "download_youtube_transcripts.py",
-    "workflow": "YOUTUBE_INGESTION_WORKFLOW.md",
-    "knowledge_card_prompt": "VIDEO_KNOWLEDGE_CARD_PROMPT.md",
+    "workflow": "youtube-ingestion-workflow.md",
+    "knowledge_card_prompt": "video-knowledge-card-prompt.md",
     "schema": "video_knowledge_card.schema.json"
   }
 }

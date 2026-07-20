@@ -36,7 +36,7 @@ python download_youtube_transcripts.py --limit 10
 
 ### 3. Sintetizza un transcript per volta
 
-Carica il transcript e usa `VIDEO_KNOWLEDGE_CARD_PROMPT.md`.
+Carica il transcript e usa `video-knowledge-card-prompt.md`.
 
 Non chiedere a Claude di sintetizzare l’intero canale in una sola sessione: la compressione eccessiva elimina procedure, eccezioni e segnali di obsolescenza.
 

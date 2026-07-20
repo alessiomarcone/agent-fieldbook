@@ -1,20 +1,28 @@
-# Tutorial video-only — in attesa di ingestione transcript
+# Tutorial video-only — stato ingestione transcript
 
-Questi tutorial ufficiali sono pagine con solo video incorporato: il contenuto testuale non è estraibile via web.
-Per completarli: `python download_youtube_transcripts.py` (o transcript dalla pagina), poi `VIDEO_KNOWLEDGE_CARD_PROMPT.md` → nuova card in questa cartella. **Uso personale: non committare i transcript grezzi.**
+Aggiornamento 2026-07-20: transcript estratti via yt-dlp (auto-caption YouTube) per 9 tutorial su 11 + 6 lezioni del corso AI Fluency Framework & Foundations. Contenuto distillato nelle card di questa cartella. I transcript grezzi restano locali (non committati — copyright).
 
-| Tutorial | URL | Cosa manca |
+## Completati (card di destinazione)
+| Tutorial | Card |
+|---|---|
+| How AI gets its character | `ai-literacy.md` |
+| Understanding knowledge gaps in AI models | `ai-literacy.md` |
+| What is sycophancy in AI models | `ai-literacy.md` |
+| Why do AI models hallucinate | `ai-literacy.md` |
+| What are skills | `claude-code-estensioni.md` |
+| How skills compare to other Claude Code features | `claude-code-estensioni.md` |
+| Using Claude Code Remote Control | `claude-code-estensioni.md` |
+| Getting started with Claude in Excel | `claude-excel.md` |
+| What is Claude managed agents | `managed-agents.md` |
+| Corso AI Fluency: 4D framework + Delegation + Description + Discernment + Diligence + Prompting | `ai-fluency-4d-corso.md` |
+
+## Ancora mancanti
+| Tutorial | URL | Motivo |
 |---|---|---|
-| How AI gets its character | https://claude.com/resources/tutorials/how-ai-gets-its-character | dettagli pretraining vs fine-tuning |
-| Understanding knowledge gaps in AI models | https://claude.com/resources/tutorials/understanding-knowledge-gaps-in-ai-models | mappa dei gap e quando verificare |
-| What is sycophancy in AI models | https://claude.com/resources/tutorials/what-is-sycophancy-in-ai-models | tattiche anti-compiacenza specifiche |
-| Why do AI models hallucinate | https://claude.com/resources/tutorials/why-do-ai-models-hallucinate | cause meccaniche + mitigazioni |
-| The 4 Ds — behavioral indicators | https://claude.com/resources/tutorials/the-4-ds-of-ai-fluency-behavioral-indicators | elenco completo indicatori per D + prompt scorecard |
-| What are skills | https://claude.com/resources/tutorials/what-are-skills | struttura SKILL.md dettagliata |
-| How skills compare to other Claude Code features | https://claude.com/resources/tutorials/how-skills-compare-to-other-claude-code-features | matrice skill vs agents/hooks/commands |
-| Using Claude Code Remote Control | https://claude.com/resources/tutorials/using-claude-code-remote-control | procedura sessioni remote |
-| Getting started with Claude in Excel | https://claude.com/resources/tutorials/getting-started-with-claude-in-excel | setup integrazione |
-| Using the GitHub integration | https://claude.com/resources/tutorials/using-the-github-integration | collegamento repo + contesto GitHub |
-| What is Claude managed agents | https://claude.com/resources/tutorials/what-is-claude-managed-agents | procedure (solo concetti estratti; preview su application) |
+| The 4 Ds — behavioral indicators | https://claude.com/resources/tutorials/the-4-ds-of-ai-fluency-behavioral-indicators | nessun video YouTube embeddato; contenuto = prompt scorecard interattivo. Framework 4D già coperto da `ai-fluency-4d-corso.md` |
+| Using the GitHub integration | https://claude.com/resources/tutorials/using-the-github-integration | nessun video YouTube embeddato nella pagina. Fonte alternativa: doc ufficiale code.claude.com |
 
-Copertura parziale già presente: regole generali anti-sycophancy/allucinazione in `regole-distillate.md`; skill/subagent/hook per Claude Code nella knowledge base principale (fonte: documentazione code.claude.com, che resta la fonte primaria per questi temi).
+## Come rigenerare/estendere
+1. `python update_youtube_catalog.py` per il catalogo canale.
+2. Embed ID da una pagina tutorial: cercare `youtube.com%2Fembed%2F` nell'HTML.
+3. `yt-dlp --skip-download --write-auto-subs --sub-langs en <url>` → pulizia VTT → sintesi con `video-knowledge-card-prompt.md`.

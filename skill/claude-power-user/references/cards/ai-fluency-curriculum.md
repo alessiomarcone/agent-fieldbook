@@ -36,5 +36,7 @@
 - Stress-test: *"cosa potrebbe sbagliare questo visual?"*; poi spiega il visual a qualcuno per testare la ritenzione.
 - Salvataggio: immagine per appunti; artifact solo per tool interattivi da riaprire.
 
-## Video-only (serve ingestione transcript — vedi pending-video-ingestion.md)
-I 4 tutorial di AI literacy (how-ai-gets-its-character, understanding-knowledge-gaps, sycophancy, hallucinations) e gli indicatori comportamentali dettagliati delle 4D sono video: regole generali già coperte in regole-distillate.md §8, dettaglio da estrarre con la pipeline YouTube.
+## Approfondimenti collegati
+- Framework 4D completo (Delegation/Description/Discernment/Diligence con sotto-competenze + 6 tecniche di prompting del corso): `ai-fluency-4d-corso.md`
+- AI literacy (carattere del modello, gap di conoscenza, sycophancy, allucinazioni): `ai-literacy.md`
+- Unico pezzo non ancora ingerito: indicatori comportamentali dettagliati delle 4D (pagina interattiva senza video) — vedi `pending-video-ingestion.md`.

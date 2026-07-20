@@ -13,15 +13,15 @@ Knowledge base pronta per **Claude Projects**, **Claude Code** e **Claude Skills
 - `knowledge-base.md` — mappa completa, learning path e link catalogati.
 - `courses.csv` — 21 corsi ufficiali Claude/Anthropic.
 - `tutorials.csv` — 30 tutorial ufficiali ad alta utilità operativa.
-- `CLAUDE_PROJECT_INSTRUCTIONS.md` — istruzioni da incollare in un Claude Project.
+- `claude-project-instructions.md` — istruzioni da incollare in un Claude Project.
 - `session-bootstrap-prompt.md` — prompt per una chat o sessione singola.
 - `CLAUDE.md` — contesto essenziale per Claude Code.
 - `skill/claude-power-user/` — Skill riutilizzabile.
-- `YOUTUBE.md` — accesso al canale, ricerche tematiche e metodo di aggiornamento.
+- `youtube.md` — accesso al canale, ricerche tematiche e metodo di aggiornamento.
 - `update_youtube_catalog.py` — genera l’elenco completo e aggiornato dei video.
 - `download_youtube_transcripts.py` — scarica e ripulisce sottotitoli e auto-caption.
-- `YOUTUBE_INGESTION_WORKFLOW.md` — pipeline per trasformare i video in knowledge card.
-- `VIDEO_KNOWLEDGE_CARD_PROMPT.md` — prompt di sintesi controllata di ogni transcript.
+- `youtube-ingestion-workflow.md` — pipeline per trasformare i video in knowledge card.
+- `video-knowledge-card-prompt.md` — prompt di sintesi controllata di ogni transcript.
 - `video_knowledge_card.schema.json` — schema per schede strutturate.
 - `sources.md` — fonti ufficiali primarie.
 
@@ -32,9 +32,9 @@ Knowledge base pronta per **Claude Projects**, **Claude Code** e **Claude Skills
    - `knowledge-base.md`
    - `courses.csv`
    - `tutorials.csv`
-   - `YOUTUBE.md`
+   - `youtube.md`
    - `sources.md`
-3. Copia il contenuto di `CLAUDE_PROJECT_INSTRUCTIONS.md` nelle istruzioni del Project.
+3. Copia il contenuto di `claude-project-instructions.md` nelle istruzioni del Project.
 4. Avvia una chat usando `session-bootstrap-prompt.md`.
 
 ## Installazione come Skill in Claude
@@ -46,7 +46,9 @@ skill/claude-power-user/
 ├── SKILL.md
 └── references/
     ├── knowledge-base.md
-    └── sources.md
+    ├── sources.md
+    ├── courses.csv / tutorials.csv / youtube.md
+    └── cards/            ← regole e procedure distillate dai tutorial ufficiali
 ```
 
 La Skill è pensata per attivarsi quando chiedi come usare Claude, scegliere una funzione, progettare un workflow o trasformarlo in una procedura riutilizzabile.
@@ -90,7 +92,7 @@ Per acquisire la knowledge dei video:
 python download_youtube_transcripts.py --category "Claude Code"
 ```
 
-Poi elabora ogni transcript con `VIDEO_KNOWLEDGE_CARD_PROMPT.md` e conserva la scheda nella cartella di reference appropriata.
+Poi elabora ogni transcript con `video-knowledge-card-prompt.md` e conserva la scheda nella cartella di reference appropriata.
 
 ## Strategia consigliata
 

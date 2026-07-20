@@ -156,7 +156,7 @@ python update_youtube_catalog.py         # elenco aggiornato
 python update_youtube_catalog.py --archive  # + copia datata
 ```
 
-Per trasformare un video in conoscenza consultabile: `python download_youtube_transcripts.py --category "Claude Code"`, poi sintetizzare ogni transcript con `VIDEO_KNOWLEDGE_CARD_PROMPT.md` seguendo `video_knowledge_card.schema.json`.
+Per trasformare un video in conoscenza consultabile: `python download_youtube_transcripts.py --category "Claude Code"`, poi sintetizzare ogni transcript con `video-knowledge-card-prompt.md` seguendo `video_knowledge_card.schema.json`.
 
 ## Documentazione primaria
 
@@ -188,8 +188,12 @@ Il contenuto operativo dei tutorial ufficiali è stato estratto e distillato in 
 | `cards/claude-excel.md` | Excel: pattern struttura→errori→fix con permesso→estensione |
 | `cards/claude-design.md` | Design: prototipi da codebase, handoff a Claude Code, presentazioni |
 | `cards/ai-fluency-curriculum.md` | Curriculum research-backed, mosse firma, check di discernimento, regole modelli recenti |
+| `cards/ai-fluency-4d-corso.md` | Corso Framework & Foundations completo: le 4D con sotto-competenze + 6 tecniche di prompting |
+| `cards/ai-literacy.md` | Carattere del modello, gap di conoscenza, sycophancy, allucinazioni: cause e contromisure |
+| `cards/claude-code-estensioni.md` | Skill vs CLAUDE.md vs subagent vs hook vs MCP; remote control |
+| `cards/managed-agents.md` | API Managed Agents: sessioni, environment, rubric, memoria, multi-agent |
 | `cards/desktop-app.md` | Chat vs Cowork vs Code: matrice di decisione e procedure |
-| `cards/pending-video-ingestion.md` | Tutorial video-only in attesa di transcript |
+| `cards/pending-video-ingestion.md` | Stato ingestione transcript (9/11 tutorial video completati) |
 
 ## Principi operativi da riversare nelle sessioni
 

@@ -1,6 +1,6 @@
 # Claude in Excel
 
-**Fonti:** how-to-use-claude-in-excel-for-accounting-revenue-model-validation, how-to-use-claude-in-excel-for-hr-headcount-planning (claude.com, sintesi 2026-07-20). Il tutorial introduttivo getting-started è video-only: vedi pending.
+**Fonti:** getting-started-with-claude-in-excel (transcript video), how-to-use-claude-in-excel-for-accounting-revenue-model-validation, how-to-use-claude-in-excel-for-hr-headcount-planning (claude.com, sintesi 2026-07-20).
 
 ## In una frase
 Claude legge l'intero workbook (tutte le tab, formule incluse) prima di rispondere, individua gli errori tutti insieme, propone modifiche che esegue solo dopo conferma esplicita.
@@ -16,6 +16,15 @@ Claude legge l'intero workbook (tutte le tab, formule incluse) prima di risponde
 5. Estensione: nuove colonne descritte in termini di business (*"aggiungi una colonna che calcola il costo pieno per dipendente usando i tassi della tab Assumptions"*) — **sempre formule che referenziano le assunzioni, mai valori hardcodati**.
 6. Scenari: *"aggiorna il piano assumendo attrition 15% invece di 10%; mostrami cosa cambia per reparto"* → confronto prima/dopo.
 7. Grafici: specifica tipo e componenti (*"waterfall del rollforward deferred revenue Q3: saldo iniziale, bookings, revenue riconosciuta, aggiustamenti, saldo finale"*).
+
+## Capacità dal tutorial introduttivo (getting-started)
+- **Domande sui dati**: calcoli che richiederebbero lavoro manuale ("il budget viaggi+pasti resta sotto il 40% del totale?") — Claude mostra la matematica per la verifica.
+- **Debug errori**: "perché c'è un errore in maggio?" → traccia l'errore alla causa (es. divisione per cella vuota) senza che tu apra le formule a mano.
+- **Spiegazione formule ereditate**: scompone VLOOKUP e simili pezzo per pezzo, con citation box cliccabili verso le celle referenziate.
+- **Pulizia dati multi-step**: "standardizza le date in YYYY-MM-DD, rimuovi duplicati, ordina per data, crea riepilogo annuale in un nuovo foglio" — chiede permesso prima di modificare, poi riporta cosa ha fatto.
+- **Modelli da zero**: forecast pluriennale con tasso di crescita in tab Assumptions (modello dinamico via formule); DCF completo (tasso sconto, terminal growth, FCF proiettati, enterprise value) con assunzioni regolabili.
+- **Pivot e grafici**: costruzione pivot ("ricavi totali per regione e prodotto"), grafico dal pivot, modifiche puntuali (tipo, assi, titolo, colori) con spiegazione di ogni cambiamento.
+- Le **citation box** nelle risposte saltano alle celle referenziate: usale per la verifica sistematica.
 
 ## Regole
 - Struttura prima dei fix: chiarezza previene errori a cascata.
