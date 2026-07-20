@@ -61,6 +61,20 @@ cp -R skill/claude-power-user .claude/skills/
 cp CLAUDE.md ./CLAUDE.md
 ```
 
+## Aggiornamento automatico
+
+Un workflow GitHub Actions (`.github/workflows/check-updates.yml`) controlla ogni lunedì:
+
+- l'indice ufficiale dei corsi vs `courses.csv`;
+- l'indice ufficiale dei tutorial vs `tutorials.csv`;
+- il numero di video del canale YouTube ufficiale.
+
+Se trova materiale non ancora catalogato apre una issue `source-update` con l'elenco. Controllo manuale in qualsiasi momento:
+
+```bash
+python check_official_sources.py
+```
+
 ## Aggiornare il catalogo YouTube
 
 ```bash
