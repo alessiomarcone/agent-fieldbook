@@ -175,6 +175,22 @@ Per trasformare un video in conoscenza consultabile: `python download_youtube_tr
 | [Directory Skills, connectors e plugins](https://support.claude.com/en/articles/14328846-browse-skills-connectors-and-plugins-in-one-directory) | Catalogo unificato delle estensioni. |
 | [Getting started with connectors](https://claude.com/resources/tutorials/getting-started-with-connectors) | Collegare fonti e strumenti esterni. |
 
+## Knowledge card distillate dai tutorial
+
+Il contenuto operativo dei tutorial ufficiali è stato estratto e distillato in card (sintesi 2026-07-20, cartella `cards/`):
+
+| Card | Copre |
+|---|---|
+| `cards/regole-distillate.md` | **Leggi prima questa**: 11 regole universali, scelta modello, scelta interfaccia, gerarchia strumenti, errori ricorrenti |
+| `cards/claude-tag-workspace.md` | @Claude in Slack/Teams: delega nei canali, memoria, prompt pronti, checklist |
+| `cards/cowork.md` | Cowork: prima delega, pattern skill→schedule→verifica, casi legale/sales/marketing/PMI |
+| `cards/plugin-building.md` | Plugin Cowork: personalizzazione, costruzione da zero, distribuzione |
+| `cards/claude-excel.md` | Excel: pattern struttura→errori→fix con permesso→estensione |
+| `cards/claude-design.md` | Design: prototipi da codebase, handoff a Claude Code, presentazioni |
+| `cards/ai-fluency-curriculum.md` | Curriculum research-backed, mosse firma, check di discernimento, regole modelli recenti |
+| `cards/desktop-app.md` | Chat vs Cowork vs Code: matrice di decisione e procedure |
+| `cards/pending-video-ingestion.md` | Tutorial video-only in attesa di transcript |
+
 ## Principi operativi da riversare nelle sessioni
 
 ### Prompt minimo ad alta qualità

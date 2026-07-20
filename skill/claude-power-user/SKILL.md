@@ -11,9 +11,13 @@ Use this skill to turn an objective into the correct Claude capability and a reu
 
 Before giving feature-specific guidance, consult:
 
+- `references/cards/regole-distillate.md` — cross-product rules distilled from the official tutorials; read this first for any "how should I use Claude" question
+- `references/cards/` — per-product operational cards (@Claude workspace, Cowork, plugins, Excel, Design, desktop app, AI fluency curriculum); each card lists procedures, ready prompts, mistakes and verification steps from the official tutorials
 - `references/knowledge-base.md` (courses, tutorials, and YouTube catalog are merged inline here)
 - `references/sources.md`
 - `references/courses.csv` / `references/tutorials.csv` / `references/YOUTUBE.md` for the raw, sortable/filterable source data behind that section
+
+Cards marked in `references/cards/pending-video-ingestion.md` cover video-only tutorials: for those topics, answer from primary documentation and flag that the tutorial content has not been ingested yet.
 
 Treat official documentation as primary. Treat videos and courses as explanatory material. Flag anything that may have changed since the source date.
 
