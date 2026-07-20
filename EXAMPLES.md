@@ -7,7 +7,7 @@ Scenari concreti, dal più semplice al più avanzato. Ogni esempio indica cosa s
 ## 1. Installare la Skill in Claude Code (2 minuti)
 
 ```bash
-git clone https://github.com/alessiomarconebe2be-pixel/claude-knowledge-pack.git
+git clone https://github.com/alessiomarcone/claude-knowledge-pack.git
 cd claude-knowledge-pack
 
 # Globale: disponibile in ogni sessione Claude Code

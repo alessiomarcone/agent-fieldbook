@@ -28,7 +28,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 STATE_FILE = ROOT / ".github" / "state.json"
-USER_AGENT = "claude-knowledge-pack-checker (+https://github.com/alessiomarconebe2be-pixel/claude-knowledge-pack)"
+USER_AGENT = "claude-knowledge-pack-checker (+https://github.com/alessiomarcone/claude-knowledge-pack)"
 
 INDEXES = [
     {
