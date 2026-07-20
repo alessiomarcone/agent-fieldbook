@@ -16,7 +16,11 @@ Knowledge base pronta per **Claude Projects**, **Claude Code** e **Claude Skills
 - `claude-project-instructions.md` — istruzioni da incollare in un Claude Project.
 - `session-bootstrap-prompt.md` — prompt per una chat o sessione singola.
 - `CLAUDE.md` — contesto essenziale per Claude Code.
-- `skill/claude-power-user/` — Skill riutilizzabile.
+- `skill/claude-power-user/` — Skill principale: triage delle capability + knowledge card distillate.
+- `skill/prompt-perfetto/` — riscrive richieste grezze in prompt di qualità (Description + 6 tecniche del corso).
+- `skill/verifica-output/` — passa un output AI ai check ufficiali anti-allucinazione e anti-sycophancy.
+- `skill/percorso-claude/` — costruisce percorsi di studio sequenziati dai cataloghi con durate reali.
+- `skill/crea-knowledge-card/` — trasforma transcript/articoli in knowledge card secondo lo schema del pack.
 - `youtube.md` — accesso al canale, ricerche tematiche e metodo di aggiornamento.
 - `update_youtube_catalog.py` — genera l’elenco completo e aggiornato dei video.
 - `download_youtube_transcripts.py` — scarica e ripulisce sottotitoli e auto-caption.
@@ -55,13 +59,22 @@ La Skill è pensata per attivarsi quando chiedi come usare Claude, scegliere una
 
 ## Installazione in Claude Code
 
-Nel progetto:
+Nel progetto (o in `~/.claude/skills/` per averle ovunque):
 
 ```bash
 mkdir -p .claude/skills
-cp -R skill/claude-power-user .claude/skills/
+cp -R skill/* .claude/skills/        # tutte le skill
+# oppure una sola: cp -R skill/claude-power-user .claude/skills/
 cp CLAUDE.md ./CLAUDE.md
 ```
+
+| Skill | Si attiva quando |
+|---|---|
+| `claude-power-user` | domande su come usare Claude, scegliere feature, progettare workflow |
+| `prompt-perfetto` | "migliora questo prompt", "come lo chiedo a Claude" |
+| `verifica-output` | "controlla questa risposta", prima di usare output in contesti a rischio |
+| `percorso-claude` | "da dove comincio", "quale corso", piani di studio |
+| `crea-knowledge-card` | "trasforma questo transcript in una scheda", pipeline YouTube |
 
 ## Aggiornamento automatico
 
