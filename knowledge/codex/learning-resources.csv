@@ -1,0 +1,13 @@
+Category,Title,Type,Level,Duration,Outcome,URL
+Foundation,AI Foundations,Course,Beginner,60-75 min,"Prompt with context, evaluate outputs, and use AI responsibly.",https://academy.openai.com/public/courses/ai-foundations-juzjs
+Foundation,Applied AI Foundations,Course,Beginner-intermediate,75-90 min,"Turn individual prompts into repeatable workflows with review points.",https://academy.openai.com/public/courses/applied-ai-foundations-hgk7r
+Agents,Agents and Workflows,Course,Intermediate,75-90 min,"Direct agents, review results, and reuse successful workflows.",https://academy.openai.com/public/courses/agents-and-workflows-bieml
+Codex,Get started with Codex,Guide,Beginner,Not stated,"Set up Codex and run the first tasks.",https://learn.chatgpt.com/docs/quickstart
+Codex,Try real tasks with Codex,Use-case collection,Beginner,Not stated,"Practice complete tasks across supported workflows.",https://learn.chatgpt.com/use-cases
+Prompting,Write better prompts for Codex,Guide,Beginner,Not stated,"Write result-oriented prompts with context, boundaries, and checks.",https://learn.chatgpt.com/guides/best-practices
+Codex app,Work faster with Codex in the ChatGPT app,Guide,Beginner,Not stated,"Use projects, tasks, steering, and local work effectively.",https://learn.chatgpt.com/docs/app
+Engineering,Codex Fundamentals,Video,Intermediate,Not stated,"Apply Codex across everyday software-engineering work.",https://academy.openai.com/public/clubs/builders-etkn1/videos/codex-for-software-engineers-2026-03-13
+Engineering,Codex for SWEs,External training,Intermediate,Not stated,"Use Codex for end-to-end software-engineering workflows.",https://academy.openai.com/public/clubs/builders-etkn1/externals/codex-for-swes-2026-03-18
+Engineering,How OpenAI uses Codex,External training,Intermediate,Not stated,"Study day-to-day Codex workflows used by OpenAI teams.",https://academy.openai.com/en/public/clubs/builders-etkn1/externals/how-openai-uses-codex-2026-03-18
+Automation,Codex 103: Advanced Workflows and Automation,Resource,Advanced,Not stated,"Build advanced workflows and automate coding tasks.",https://academy.openai.com/public/clubs/builders-etkn1/resources/codex-103-advanced-workflows-and-automation-2026-03-18
+Automation,Codex Bootcamp,Live series,Beginner-advanced,3 x 60 min,"Progress from agentic coding to team workflows and advanced automation.",https://academy.openai.com/en/public/clubs/builders-etkn1/resources/codex-bootcamp-2026-07-18

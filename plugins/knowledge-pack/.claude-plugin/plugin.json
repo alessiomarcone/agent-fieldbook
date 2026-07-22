@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "knowledge-pack",
+  "displayName": "Agent Fieldbook",
+  "version": "1.0.0",
+  "description": "Ten source-backed skills that turn official Claude and Codex learning into reliable daily workflows.",
+  "author": {
+    "name": "Alessio Marcone",
+    "url": "https://github.com/alessiomarcone"
+  },
+  "homepage": "https://github.com/alessiomarcone/claude-knowledge-pack#readme",
+  "repository": "https://github.com/alessiomarcone/claude-knowledge-pack",
+  "license": "MIT",
+  "keywords": [
+    "agent-skills",
+    "ai-fluency",
+    "claude",
+    "codex",
+    "learning",
+    "prompting",
+    "subagents"
+  ]
+}

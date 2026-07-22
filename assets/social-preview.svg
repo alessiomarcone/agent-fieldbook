@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 640" role="img" aria-labelledby="title desc">
+  <title id="title">Agent Fieldbook</title>
+  <desc id="desc">Source-backed agent skills that turn official learning into daily workflows for Claude and Codex.</desc>
+  <rect width="1280" height="640" fill="#062F2B"/>
+  <circle cx="1160" cy="80" r="260" fill="#0F766E" opacity="0.28"/>
+  <circle cx="1050" cy="620" r="320" fill="#115E59" opacity="0.22"/>
+  <g transform="translate(96 128) scale(.375)">
+    <rect width="1024" height="1024" rx="224" fill="#0F766E"/>
+    <path d="M154 248c0-35 29-64 64-64h161c59 0 105 19 133 55 28-36 74-55 133-55h161c35 0 64 29 64 64v488c0 35-29 64-64 64H638c-51 0-93 15-126 46-33-31-75-46-126-46H218c-35 0-64-29-64-64V248Z" fill="#ECFDF5"/>
+    <path d="M512 239v607M512 720c-42-35-85-52-130-52H258V304h124c45 0 88 17 130 52M512 720c42-35 85-52 130-52h124V304H642c-45 0-88 17-130 52" fill="none" stroke="#115E59" stroke-width="34" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M512 570 388 468m124 102 124-102M512 570v106" fill="none" stroke="#F59E0B" stroke-width="38" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="388" cy="468" r="32" fill="#F59E0B"/>
+    <circle cx="636" cy="468" r="32" fill="#F59E0B"/>
+    <circle cx="512" cy="676" r="32" fill="#F59E0B"/>
+  </g>
+  <text x="550" y="208" fill="#ECFDF5" font-family="Arial, Helvetica, sans-serif" font-size="72" font-weight="700">Agent Fieldbook</text>
+  <text x="554" y="283" fill="#99F6E4" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="600">Source-backed agent skills</text>
+  <text x="554" y="354" fill="#D1FAE5" font-family="Arial, Helvetica, sans-serif" font-size="28">Official learning → daily workflows</text>
+  <rect x="554" y="410" width="172" height="58" rx="29" fill="#ECFDF5"/>
+  <text x="640" y="449" fill="#115E59" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700">Claude</text>
+  <rect x="744" y="410" width="160" height="58" rx="29" fill="#F59E0B"/>
+  <text x="824" y="449" fill="#422006" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700">Codex</text>
+  <text x="554" y="526" fill="#94A3B8" font-family="Arial, Helvetica, sans-serif" font-size="22">Independent · multilingual · MIT licensed</text>
+</svg>

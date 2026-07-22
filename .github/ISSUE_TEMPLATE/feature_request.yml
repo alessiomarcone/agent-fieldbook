@@ -1,0 +1,24 @@
+name: Feature request
+description: Propose a focused improvement to the pack or its skills.
+title: "[Feature]: "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What workflow is difficult today?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed improvement
+      description: Show a concrete prompt or use case when possible.
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Relevant official sources
+      description: Link current official Anthropic or OpenAI documentation and learning material.

@@ -1,0 +1,7 @@
+interface:
+  display_name: "Plugin"
+  short_description: "Package and validate product-correct plugins"
+  default_prompt: "Use $plugin to package these capabilities for the correct plugin ecosystem."
+
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,7 @@
+interface:
+  display_name: "Knowledge Card"
+  short_description: "Distill sources into verifiable cards"
+  default_prompt: "Use $knowledge-card to turn this source into a compact, verifiable knowledge card."
+
+policy:
+  allow_implicit_invocation: true

@@ -1,122 +1,255 @@
-# Claude Knowledge Pack
+<div align="center">
 
-> **EN** — A ready-to-install knowledge base that teaches Claude to be used *the way Anthropic teaches it*: a structured catalog of the 21 official Skilljar courses and 30 official tutorials (with level, duration and direct links), an installable `claude-power-user` Skill for Claude Code, Project instructions for claude.ai, and a pipeline to keep the official YouTube channel catalog up to date. Content is in Italian; links point to official English sources. Contributions and translations welcome.
+<img src="assets/logo.svg" alt="Agent Fieldbook mark" width="96">
 
-> **Disclaimer** — This is an **unofficial community project**, not affiliated with or endorsed by Anthropic. "Claude" and "Anthropic" are trademarks of Anthropic PBC. This repository contains only links and factual metadata (titles, durations, categories) pointing to official sources — no course content or video transcripts are redistributed here. The transcript download scripts are for **personal study use only**: do not commit or redistribute downloaded transcripts (they are copyrighted content).
+# Agent Fieldbook
 
-Knowledge base pronta per **Claude Projects**, **Claude Code** e **Claude Skills**, costruita esclusivamente da fonti ufficiali Anthropic: corsi Skilljar, tutorial claude.com, documentazione e canale YouTube.
+**Expert training, turned into source-backed skills your agent can use while it works.**
 
-**➜ [Esempi di utilizzo pratici](EXAMPLES.md)** — installazione, domande tipo, percorsi di studio, setup Project, pipeline YouTube.
+[![Validate](https://github.com/alessiomarcone/claude-knowledge-pack/actions/workflows/validate.yml/badge.svg)](https://github.com/alessiomarcone/claude-knowledge-pack/actions/workflows/validate.yml)
+[![Source freshness](https://github.com/alessiomarcone/claude-knowledge-pack/actions/workflows/check-updates.yml/badge.svg)](https://github.com/alessiomarcone/claude-knowledge-pack/actions/workflows/check-updates.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-0f766e.svg)](LICENSE)
+[![Claude plugin](https://img.shields.io/badge/Claude-plugin-D97757)](https://code.claude.com/docs/en/plugins)
+[![Codex plugin](https://img.shields.io/badge/Codex-plugin-111827)](https://learn.chatgpt.com/docs/build-plugins)
 
-## Contenuto
+The practical lessons from official Claude and Codex learning resources, available at the moment of work.
 
-- `knowledge-base.md` — mappa completa, learning path e link catalogati.
-- `courses.csv` — 21 corsi ufficiali Claude/Anthropic.
-- `tutorials.csv` — 30 tutorial ufficiali ad alta utilità operativa.
-- `claude-project-instructions.md` — istruzioni da incollare in un Claude Project.
-- `session-bootstrap-prompt.md` — prompt per una chat o sessione singola.
-- `CLAUDE.md` — contesto essenziale per Claude Code.
-- `skill/claude-power-user/` — Skill principale: triage delle capability + knowledge card distillate.
-- `skill/prompt-perfetto/` — riscrive richieste grezze in prompt di qualità (Description + 6 tecniche del corso).
-- `skill/verifica-output/` — passa un output AI ai check ufficiali anti-allucinazione e anti-sycophancy.
-- `skill/percorso-claude/` — costruisce percorsi di studio sequenziati dai cataloghi con durate reali.
-- `skill/crea-knowledge-card/` — trasforma transcript/articoli in knowledge card secondo lo schema del pack.
-- `youtube.md` — accesso al canale, ricerche tematiche e metodo di aggiornamento.
-- `update_youtube_catalog.py` — genera l’elenco completo e aggiornato dei video.
-- `download_youtube_transcripts.py` — scarica e ripulisce sottotitoli e auto-caption.
-- `youtube-ingestion-workflow.md` — pipeline per trasformare i video in knowledge card.
-- `video-knowledge-card-prompt.md` — prompt di sintesi controllata di ogni transcript.
-- `video_knowledge_card.schema.json` — schema per schede strutturate.
-- `sources.md` — fonti ufficiali primarie.
+[Why](#the-gap-this-closes) · [Install](#install) · [Skills](#skills) · [Knowledge](#knowledge-library) · [Examples](EXAMPLES.md) · [Contribute](CONTRIBUTING.md)
 
-## Installazione in Claude Projects
+</div>
 
-1. Crea un Project dedicato, per esempio **Claude Operating System**.
-2. Carica:
-   - `knowledge-base.md`
-   - `courses.csv`
-   - `tutorials.csv`
-   - `youtube.md`
-   - `sources.md`
-3. Copia il contenuto di `claude-project-instructions.md` nelle istruzioni del Project.
-4. Avvia una chat usando `session-bootstrap-prompt.md`.
+> [!NOTE]
+> This is an independent community project. “Official” describes its sources,
+> not its publisher. Agent Fieldbook is not affiliated with or endorsed by
+> Anthropic or OpenAI.
 
-## Installazione come Skill in Claude
+## The gap this closes
 
-Carica o copia la cartella:
+Ask Claude to structure a project and it will usually make a plausible decision
+from the context it has: perhaps a project instruction file, a skill, a
+subagent, a hook, or a plugin. Plausible is not always the same as the current
+method Anthropic teaches.
+
+File names change. Product mechanisms have boundaries that are easy to blur.
+Some important techniques are explained deeply in a course or tutorial but are
+not reliably applied when Claude is making an autonomous implementation choice.
+
+That creates a strange experience: you can work with Claude every day, then
+follow an official course and discover that the recommended structure,
+terminology, or mechanism differs from what Claude just built.
+
+**Agent Fieldbook puts those lessons into the workflow itself.** It converts
+publicly available official training and documentation into compact,
+source-backed instructions that Claude can apply during real work. You should
+not need to complete every course before your agent can benefit from its
+operating lessons.
+
+```mermaid
+flowchart LR
+    A["Official courses, tutorials, and docs"] --> B["Original source synthesis"]
+    B --> C["Knowledge cards and mechanism rules"]
+    C --> D["Focused agent skills"]
+    D --> E["Applied during real work"]
+    E --> F["Verification against current sources"]
+```
+
+Claude is where this problem started. The Codex branch applies the same method
+using OpenAI documentation and Academy resources, while keeping every command,
+manifest, permission, and agent configuration in its own product branch.
+
+> [!IMPORTANT]
+> The skills answer in the user's language. Claude and Codex share operating
+> principles, but not configuration formats. Every specialist skill selects one
+> product branch before using commands, manifests, permissions, or agent fields.
+
+## What is inside
+
+The repository packages the resulting operating layer as:
+
+- **10 focused skills** with classic names such as `/subagent`, `/prompt`, and `/verify`;
+- **2 native plugin manifests** for Claude and Codex;
+- **21 Anthropic courses** and **30 Anthropic tutorials** with direct links;
+- **12 verified OpenAI learning resources**, including three formal Academy courses;
+- **12 distilled Claude knowledge cards** with procedures, failure modes, and checks;
+- **0 runtime credentials, hooks, MCP servers, or background processes**.
+
+This is not a transcript archive or a replacement for the courses. It is the
+execution companion: concise instructions for applying their stable lessons,
+direct links for deeper study, and explicit verification whenever product
+behavior may have changed.
+
+## Install
+
+### Claude Code
+
+```bash
+claude plugin marketplace add alessiomarcone/claude-knowledge-pack
+claude plugin install knowledge-pack@agent-fieldbook
+```
+
+Start a new session, ask naturally, or invoke a skill directly:
 
 ```text
-skill/claude-power-user/
-├── SKILL.md
-└── references/
+/knowledge-pack:navigate Should this project use instructions, a skill, or a subagent? Use current official guidance.
+/knowledge-pack:verify Check whether this Claude setup follows current official guidance.
+```
+
+Claude plugin commands are namespaced by design. A standalone skill is invoked as `/subagent`; the installed plugin form is `/knowledge-pack:subagent`.
+
+If you previously installed older standalone skills such as `prompt-perfetto` or
+`verifica-output`, disable them before relying on implicit routing. Their discovery
+descriptions overlap the new classic names; explicit `/knowledge-pack:<skill>`
+invocation remains unambiguous during migration.
+
+### Codex
+
+```bash
+codex plugin marketplace add alessiomarcone/claude-knowledge-pack
+codex plugin add knowledge-pack@agent-fieldbook
+```
+
+Start a new task and mention the skill:
+
+```text
+Use $knowledge-pack:subagent to split this review into security, tests, and maintainability.
+Use $knowledge-pack:skill to package our release checklist as a reusable workflow.
+```
+
+The installed plugin uses the `knowledge-pack` component namespace. Standalone
+skills use the shorter `$subagent`, `$skill`, and similar names. You can also
+install the plugin from the ChatGPT desktop app's Plugins directory after adding
+the marketplace.
+
+### One standalone skill
+
+```bash
+git clone https://github.com/alessiomarcone/claude-knowledge-pack.git
+cd claude-knowledge-pack
+
+# Claude Code
+mkdir -p ~/.claude/skills
+cp -R plugins/knowledge-pack/skills/subagent ~/.claude/skills/
+
+# Codex
+mkdir -p ~/.codex/skills
+cp -R plugins/knowledge-pack/skills/subagent ~/.codex/skills/
+```
+
+## Skills
+
+| Skill | Contract | Typical request |
+|---|---|---|
+| `navigate` | Choose one smallest adequate mechanism | “Should this be instructions, a skill, a subagent, or a plugin?” |
+| `prompt` | Produce one bounded, verifiable task prompt | “Turn this rough objective into a ready Codex task.” |
+| `verify` | Label claims by evidence and uncertainty | “Check this before I publish it.” |
+| `subagent` | Decide on delegation and define a strict handoff | “Create a parallel reviewer with read-only authority.” |
+| `skill` | Turn one repeated workflow into a tested skill | “Package our incident brief process.” |
+| `plugin` | Build the correct distributable for one ecosystem | “Ship these skills for Claude and Codex.” |
+| `cowork` | Design a sourced Cowork workflow with approval gates | “Create a weekly legal brief from connected sources.” |
+| `codex` | Configure a complete Codex task or repository workflow | “Set up this repo for reliable agent work.” |
+| `learn` | Sequence official resources with real durations | “I have three hours a week; teach me agent workflows.” |
+| `knowledge-card` | Distill one source into reusable, verifiable knowledge | “Turn this workshop transcript into a card.” |
+
+Skills use progressive disclosure: discovery metadata stays small, operating instructions load when selected, and platform references load only when required.
+
+## One command, strict product branches
+
+```text
+                         /subagent
+                             │
+                 resolve target ecosystem
+                    ┌────────┴────────┐
+                    │                 │
+             Claude branch       Codex branch
+             Claude Code         .codex/agents/*.toml
+             Managed Agents      parent sandbox/approvals
+             Anthropic rules     OpenAI rules
+```
+
+The same boundary applies to `skill`, `plugin`, and product-sensitive prompting. Shared concepts are normalized; unsupported fields are never translated by analogy.
+
+## Knowledge library
+
+```text
+knowledge/
+├── claude/
+│   ├── knowledge-base.md
+│   ├── courses.csv
+│   ├── tutorials.csv
+│   ├── claude-code-plugins.md
+│   ├── claude-code-subagents.md
+│   ├── sources.md
+│   ├── youtube.md
+│   └── cards/
+└── codex/
     ├── knowledge-base.md
-    ├── sources.md
-    ├── courses.csv / tutorials.csv / youtube.md
-    └── cards/            ← regole e procedure distillate dai tutorial ufficiali
+    ├── learning-resources.csv
+    ├── prompting.md
+    ├── subagents.md
+    ├── skills.md
+    ├── plugins.md
+    └── sources.md
 ```
 
-La Skill è pensata per attivarsi quando chiedi come usare Claude, scegliere una funzione, progettare un workflow o trasformarlo in una procedura riutilizzabile.
+Start with [knowledge-base.md](knowledge-base.md) for the universal mechanism map. Use the [Claude branch](knowledge/claude/knowledge-base.md) or [Codex branch](knowledge/codex/knowledge-base.md) for product details.
 
-## Installazione in Claude Code
+## Claude Project setup
 
-Nel progetto (o in `~/.claude/skills/` per averle ovunque):
+To use the Claude corpus without installing a plugin:
+
+1. Create a Claude Project.
+2. Upload the five files in `knowledge/claude/`: `knowledge-base.md`, `courses.csv`, `tutorials.csv`, `youtube.md`, and `sources.md`.
+3. Paste [claude-project-instructions.md](claude-project-instructions.md) into Project instructions.
+4. Start with [session-bootstrap-prompt.md](session-bootstrap-prompt.md).
+
+## Freshness and provenance
+
+The source hierarchy is:
+
+1. current official product documentation;
+2. official course, tutorial, and Academy indexes;
+3. official videos and workshops as explanatory material;
+4. explicit uncertainty plus a verification step for sensitive details.
+
+Claude catalog freshness runs weekly:
 
 ```bash
-mkdir -p .claude/skills
-cp -R skill/* .claude/skills/        # tutte le skill
-# oppure una sola: cp -R skill/claude-power-user .claude/skills/
-cp CLAUDE.md ./CLAUDE.md
+python3 check_official_sources.py
 ```
 
-| Skill | Si attiva quando |
-|---|---|
-| `claude-power-user` | domande su come usare Claude, scegliere feature, progettare workflow |
-| `prompt-perfetto` | "migliora questo prompt", "come lo chiedo a Claude" |
-| `verifica-output` | "controlla questa risposta", prima di usare output in contesti a rischio |
-| `percorso-claude` | "da dove comincio", "quale corso", piani di studio |
-| `crea-knowledge-card` | "trasforma questo transcript in una scheda", pipeline YouTube |
+Raw transcripts are never committed. The YouTube pipeline stores only original distilled cards; see [youtube-ingestion-workflow.md](youtube-ingestion-workflow.md).
 
-## Aggiornamento automatico
+## Naming and compatibility
 
-Un workflow GitHub Actions (`.github/workflows/check-updates.yml`) controlla ogni lunedì:
+**Agent Fieldbook** is the public project name. `knowledge-pack` remains the
+stable technical plugin namespace so installed invocations stay predictable.
 
-- l'indice ufficiale dei corsi vs `courses.csv`;
-- l'indice ufficiale dei tutorial vs `tutorials.csv`;
-- il numero di video del canale YouTube ufficiale.
+This repository is not an implementation of, and does not claim conformance
+with, the independent [Agent Knowledge specification](https://limecloud.github.io/agentknowledge/en/specification).
+Its knowledge cards are human-readable source syntheses; its distributable is a
+Claude and Codex skills plugin.
 
-Se trova materiale non ancora catalogato apre una issue `source-update` con l'elenco. Controllo manuale in qualsiasi momento:
+## Development
 
 ```bash
-python check_official_sources.py
+python3 scripts/sync_pack.py
+python3 scripts/validate_pack.py
+python3 -m unittest discover -s tests -v
+python3 scripts/package_plugin.py
 ```
 
-## Aggiornare il catalogo YouTube
+If Claude Code is installed:
 
 ```bash
-python -m pip install -U yt-dlp
-python update_youtube_catalog.py
+claude plugin validate . --strict
 ```
 
-Lo script produce link diretti, titolo, categoria, durata e data quando disponibili. L’opzione `--archive` conserva anche una copia datata.
+Release artifacts are deterministic and include both plugin manifests. Public-review fixtures live in [submission](submission/).
 
-Per acquisire la knowledge dei video:
+## Security, privacy, and support
 
-```bash
-python download_youtube_transcripts.py --category "Claude Code"
-```
+The plugin has no autonomous runtime component; any read or write action is performed by the host only in response to the user's task and permissions. See [SECURITY.md](SECURITY.md), [PRIVACY.md](PRIVACY.md), [TERMS.md](TERMS.md), and [SUPPORT.md](SUPPORT.md).
 
-Poi elabora ogni transcript con `video-knowledge-card-prompt.md` e conserva la scheda nella cartella di reference appropriata.
+## License
 
-## Strategia consigliata
-
-Non riversare indiscriminatamente trascrizioni lunghe nel contesto. Mantieni:
-
-- principi e criteri nelle istruzioni;
-- procedure in Skill;
-- materiali lunghi nelle reference;
-- dati vivi tramite connector/MCP;
-- elenco YouTube aggiornato tramite script.
-
-## Limite noto
-
-L’elenco completo dei singoli link YouTube non è congelato nel pacchetto perché il canale cambia e YouTube espone il feed in modo dinamico. Lo script è il catalogo autorevole e rigenerabile.
+Code and original curation are available under the [MIT License](LICENSE). Linked third-party material remains subject to its original terms. “Claude” and “Anthropic” are trademarks of Anthropic PBC; “OpenAI,” “ChatGPT,” and “Codex” are trademarks of OpenAI.

@@ -9,8 +9,8 @@ Trasformare il canale ufficiale Anthropic in una base consultabile da Claude sen
 ### 1. Aggiorna l’elenco
 
 ```bash
-python -m pip install -U yt-dlp
-python update_youtube_catalog.py --archive
+python3 -m pip install -U yt-dlp
+python3 update_youtube_catalog.py --archive
 ```
 
 ### 2. Scarica i transcript
@@ -18,25 +18,25 @@ python update_youtube_catalog.py --archive
 Tutto il canale:
 
 ```bash
-python download_youtube_transcripts.py
+python3 download_youtube_transcripts.py
 ```
 
 Per iniziare da una categoria:
 
 ```bash
-python download_youtube_transcripts.py --category "Claude Code"
-python download_youtube_transcripts.py --category "Skills / Subagents / MCP / Agents"
+python3 download_youtube_transcripts.py --category "Claude Code"
+python3 download_youtube_transcripts.py --category "Skills / Subagents / MCP / Agents"
 ```
 
 Test su dieci video:
 
 ```bash
-python download_youtube_transcripts.py --limit 10
+python3 download_youtube_transcripts.py --limit 10
 ```
 
 ### 3. Sintetizza un transcript per volta
 
-Carica il transcript e usa `video-knowledge-card-prompt.md`.
+Carica il transcript e usa `knowledge-card-prompt.md`.
 
 Non chiedere a Claude di sintetizzare l’intero canale in una sola sessione: la compressione eccessiva elimina procedure, eccezioni e segnali di obsolescenza.
 
@@ -64,7 +64,7 @@ knowledge-cards/
 
 ### 6. Aggiornamento incrementale
 
-Confronta il nuovo `youtube_videos.csv` con la copia archiviata. Elabora soltanto i nuovi Video ID. Quando un nuovo contenuto contraddice una scheda precedente:
+Confronta il nuovo `knowledge/claude/youtube_videos.csv` con la copia archiviata. Elabora soltanto i nuovi Video ID. Quando un nuovo contenuto contraddice una scheda precedente:
 
 1. conserva la vecchia scheda in `archive/`;
 2. aggiorna `knowledge_checked`;

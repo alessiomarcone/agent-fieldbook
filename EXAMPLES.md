@@ -1,122 +1,93 @@
-# Esempi di utilizzo
+# Examples
 
-Scenari concreti, dal più semplice al più avanzato. Ogni esempio indica cosa scrivere e cosa aspettarsi.
+Every example shows the smallest useful entry point and the shape of a good result.
 
----
+## Route an ambiguous workflow
 
-## 1. Installare la Skill in Claude Code (2 minuti)
+Claude plugin:
 
-```bash
-git clone https://github.com/alessiomarcone/claude-knowledge-pack.git
-cd claude-knowledge-pack
-
-# Globale: disponibile in ogni sessione Claude Code
-mkdir -p ~/.claude/skills
-cp -R skill/claude-power-user ~/.claude/skills/
-
-# Oppure per un solo progetto
-mkdir -p /percorso/progetto/.claude/skills
-cp -R skill/claude-power-user /percorso/progetto/.claude/skills/
-cp CLAUDE.md /percorso/progetto/CLAUDE.md
+```text
+/knowledge-pack:navigate Every Friday I combine three sources into a draft update. Should this be instructions, a skill, a subagent, or a plugin?
 ```
 
-Verifica: apri una sessione Claude Code e chiedi
+Codex:
 
-> Quali skill hai disponibili?
-
-`claude-power-user` deve comparire nell'elenco.
-
----
-
-## 2. Fare domande sulle funzionalità di Claude
-
-Con la Skill installata, domande come queste attivano automaticamente la knowledge base e ottengono risposte basate sulle fonti ufficiali, con link a corso o tutorial pertinente:
-
-> Cos'è un subagent e quando conviene usarlo invece di una skill?
-
-> Devo far ricordare a Claude le convenzioni del mio team: CLAUDE.md, Project o Skill?
-
-> Come collego Claude ai dati live del mio CRM?
-
-> Voglio automatizzare un controllo che scatti a ogni commit: hook o skill?
-
-La Skill risponde seguendo il formato: **scelta consigliata → perché → procedura → prompt pronto → verifica → riutilizzo**.
-
----
-
-## 3. Farsi consigliare un percorso di studio
-
-> Non ho mai usato Claude Code. In che ordine dovrei seguire i corsi ufficiali? Ho circa 3 ore a settimana.
-
-Claude attinge da `courses.csv` (livello + durata reali) e propone un percorso sequenziato, ad esempio: Claude Code 101 (1h) → Claude Code in Action (1h) → Introduction to agent skills (30 min) → Introduction to subagents (20 min).
-
-Filtro manuale rapido, senza Claude:
-
-```bash
-# Solo corsi base, con durata
-awk -F',' '$3 ~ /Base/ {print $2, "—", $4}' courses.csv
+```text
+Use $knowledge-pack:navigate to choose the smallest mechanism for this recurring workflow.
 ```
 
----
+Expected: one route, one reason, one exact next invocation, and a freshness check only when necessary.
 
-## 4. Configurare un Claude Project (claude.ai)
+## Define a strict subagent
 
-1. Su claude.ai crea un Project, es. **Claude Operating System**.
-2. Carica come Project knowledge: `knowledge-base.md`, `courses.csv`, `tutorials.csv`, `youtube.md`, `sources.md`.
-3. Incolla il contenuto di `claude-project-instructions.md` nelle istruzioni del Project.
-4. Avvia la prima chat incollando `session-bootstrap-prompt.md`.
-
-Da quel momento ogni chat del Project risponde su funzionalità Claude citando le fonti ufficiali invece di andare a memoria.
-
-Esempio di richiesta nel Project:
-
-> Il mio team vuole usare @Claude in Slack per il triage dei ticket. Preparami una procedura partendo dai tutorial ufficiali.
-
----
-
-## 5. Aggiornare il catalogo YouTube
-
-```bash
-python -m pip install -U yt-dlp
-python update_youtube_catalog.py            # genera youtube_videos.csv + .md
-python update_youtube_catalog.py --archive  # conserva anche copia datata
+```text
+Use $knowledge-pack:subagent to design a read-only reviewer for this repository. It should inspect security risks, return file evidence, make no edits, and stop if it needs network access.
 ```
 
-Output: elenco completo dei video del canale ufficiale con link diretto, titolo, categoria, durata e data. I file generati non vanno committati (sono in `.gitignore`): lo script è il catalogo autorevole.
+Expected: a positive delegation verdict, objective, scope, tool and authority boundary, product-correct configuration, handoff format, and three tests. If delegation is unnecessary, the skill returns only a verdict and simpler route.
 
----
+## Improve a task without prompt bloat
 
-## 6. Trasformare un video in una knowledge card
+```text
+/knowledge-pack:prompt Improve this request without making it longer than necessary:
 
-Pipeline completa (uso personale — i transcript non vanno ridistribuiti):
-
-```bash
-# 1. Scarica i sottotitoli dei video di una categoria
-python download_youtube_transcripts.py --category "Claude Code"
-
-# 2. Apri Claude Code nella cartella e chiedi:
+“Review onboarding.”
 ```
 
-> Prendi il transcript in transcripts/<video>.md e produci una knowledge card seguendo video-knowledge-card-prompt.md, valida rispetto a video_knowledge_card.schema.json.
+Expected: one copyable prompt that preserves the short request, adds only material requirements, and leaves necessary unknowns as visible placeholders instead of inventing them.
 
-Risultato: scheda strutturata con procedura passo-passo, prompt riutilizzabili, errori da evitare e segnalazione delle informazioni potenzialmente superate. Salvala in `skill/claude-power-user/references/` per renderla parte della knowledge base.
+## Verify before publishing
 
----
+```text
+Use $knowledge-pack:verify on the following launch post. Check every product claim, date, figure, and link against current primary sources. Label unsupported claims and give corrections.
+```
 
-## 7. Verificare che una funzione esista davvero
+Expected: claim-level ✅, ⚠️, or ❌ labels, an overall verdict, and what would make that verdict wrong.
 
-La Skill impone la regola anti-allucinazione: mai inventare funzioni, piani o limiti. Esempio:
+## Build a focused skill
 
-> Claude può eseguire codice direttamente dentro un Artifact?
+```text
+Use $knowledge-pack:skill to package our weekly release-readiness review. It should trigger only for release reviews, read our checklist, return blockers by severity, and never publish or merge.
+```
 
-Risposta attesa: verifica sulla documentazione citata in `sources.md`, indicazione della data della fonte e — se l'informazione può essere cambiata — un passo di verifica esplicito invece di una risposta inventata.
+Expected: mechanism decision, trigger/non-trigger contract, minimal file tree, implementation when requested, and forward tests.
 
----
+## Build a cross-platform plugin
 
-## 8. Trasformare un workflow ricorrente in una Skill
+```text
+Use $knowledge-pack:plugin to package these workflows for both Claude and Codex. Keep one skills directory but separate the manifests and all product-specific references.
+```
 
-Quando ripeti una procedura almeno due volte:
+Expected: two validated packaging branches, no cross-product fields, clean-install instructions, and a release gate.
 
-> Questa procedura di report settimanale l'ho già fatta tre volte. Trasformala in una Skill seguendo le regole della knowledge base.
+## Learn Claude Code
 
-Claude applica la regola di riuso: `SKILL.md` breve, materiale lungo in `references/`, script solo per i passaggi deterministici.
+```text
+/knowledge-pack:learn I know Claude basics and have two hours a week. Build a four-week official path for Claude Code skills, subagents, and MCP.
+```
+
+Expected: resources selected from `knowledge/claude/courses.csv` and `tutorials.csv`, real stated durations, one exercise per block, and direct links.
+
+## Learn Codex agent workflows
+
+```text
+Use $knowledge-pack:learn to take me from Codex beginner to writing AGENTS.md, skills, and custom agents. I have three hours a week.
+```
+
+Expected: formal Academy courses labeled as courses, docs and videos labeled accurately, no invented durations, and a practical progression.
+
+## Design a Cowork workflow
+
+```text
+/knowledge-pack:cowork Create a weekly legal question brief from connected sources. Keep citations, flag missing data, and leave all external messages as drafts.
+```
+
+Expected: one-time setup, exact brief, approval gates, verification, and the rule to promote into a reusable skill after the first successful run.
+
+## Distill a source
+
+```text
+Use $knowledge-pack:knowledge-card on this workshop transcript. Separate explicit claims from inference, remove promotion, and flag every time-sensitive product detail.
+```
+
+Expected: an original structured card. If editing this repository, save it under `knowledge/<product>/cards/`; never commit the raw transcript.

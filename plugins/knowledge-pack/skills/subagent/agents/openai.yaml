@@ -1,0 +1,7 @@
+interface:
+  display_name: "Subagent"
+  short_description: "Design strict product-aware subagents"
+  default_prompt: "Use $subagent to decide whether this work needs delegation and define the contract."
+
+policy:
+  allow_implicit_invocation: true

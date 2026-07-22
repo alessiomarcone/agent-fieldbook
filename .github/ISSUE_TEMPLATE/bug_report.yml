@@ -1,0 +1,47 @@
+name: Bug report
+description: Report broken installation, packaging, validation, or skill behavior.
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for helping make the pack more reliable.
+  - type: dropdown
+    id: surface
+    attributes:
+      label: Surface
+      options:
+        - Claude Code plugin
+        - Codex plugin
+        - Cowork or ChatGPT desktop
+        - Standalone skill
+        - Claude Project
+        - Catalog or script
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      placeholder: 1.0.0, commit SHA, Claude Code/Codex version
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction
+      description: Include the exact command or prompt, expected result, and actual result.
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant output
+      render: shell
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety check
+      options:
+        - label: I removed credentials, private data, and copyrighted transcript content.
+          required: true

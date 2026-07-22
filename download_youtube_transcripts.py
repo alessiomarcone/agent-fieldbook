@@ -6,21 +6,23 @@ and convert VTT files into Markdown transcripts suitable for Claude Projects.
 Run update_youtube_catalog.py first.
 
 Requirements:
-    python -m pip install -U yt-dlp
+    python3 -m pip install -U yt-dlp
 
 Examples:
-    python download_youtube_transcripts.py
-    python download_youtube_transcripts.py --category "Claude Code"
-    python download_youtube_transcripts.py --limit 10
+    python3 download_youtube_transcripts.py
+    python3 download_youtube_transcripts.py --category "Claude Code"
+    python3 download_youtube_transcripts.py --limit 10
 """
 from __future__ import annotations
 
 import argparse
 import csv
 import html
+import importlib.util
 import re
 import shutil
 import subprocess
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -87,10 +89,10 @@ def find_best_vtt(raw_dir: Path, video_id: str) -> Path | None:
         return (2, name)
     return sorted(files, key=priority)[0]
 
-def download(ytdlp: str, url: str, video_id: str, raw_dir: Path) -> None:
+def download(ytdlp: list[str], url: str, video_id: str, raw_dir: Path) -> None:
     template = str(raw_dir / f"{video_id}.%(language)s.%(ext)s")
     cmd = [
-        ytdlp,
+        *ytdlp,
         "--skip-download",
         "--write-subs",
         "--write-auto-subs",
@@ -110,13 +112,20 @@ def main() -> None:
     args = parser.parse_args()
 
     root = Path(__file__).resolve().parent
-    catalog = root / "youtube_videos.csv"
+    catalog = root / "knowledge" / "claude" / "youtube_videos.csv"
     if not catalog.exists():
-        raise SystemExit("Manca youtube_videos.csv. Esegui prima update_youtube_catalog.py.")
+        raise SystemExit(
+            "Manca knowledge/claude/youtube_videos.csv. "
+            "Esegui prima update_youtube_catalog.py."
+        )
 
-    ytdlp = shutil.which("yt-dlp")
-    if not ytdlp:
-        raise SystemExit("yt-dlp non trovato. Installa con: python -m pip install -U yt-dlp")
+    executable = shutil.which("yt-dlp")
+    if executable:
+        ytdlp = [executable]
+    elif importlib.util.find_spec("yt_dlp") is not None:
+        ytdlp = [sys.executable, "-m", "yt_dlp"]
+    else:
+        raise SystemExit("yt-dlp non trovato. Installa con: python3 -m pip install -U yt-dlp")
 
     raw_dir = root / "transcripts" / "_raw"
     out_dir = root / "transcripts" / "markdown"

@@ -1,0 +1,7 @@
+interface:
+  display_name: "Prompt"
+  short_description: "Turn rough requests into reliable prompts"
+  default_prompt: "Use $prompt to rewrite this request as a clear, bounded, verifiable prompt."
+
+policy:
+  allow_implicit_invocation: true

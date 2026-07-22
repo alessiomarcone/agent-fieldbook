@@ -1,0 +1,7 @@
+interface:
+  display_name: "Verify"
+  short_description: "Fact-check and stress-test AI outputs"
+  default_prompt: "Use $verify to check this output and label every unsupported claim."
+
+policy:
+  allow_implicit_invocation: true

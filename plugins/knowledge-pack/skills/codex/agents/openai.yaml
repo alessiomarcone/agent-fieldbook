@@ -1,0 +1,7 @@
+interface:
+  display_name: "Codex"
+  short_description: "Design reliable Codex tasks and setup"
+  default_prompt: "Use $codex to choose and design the right Codex workflow for this objective."
+
+policy:
+  allow_implicit_invocation: true

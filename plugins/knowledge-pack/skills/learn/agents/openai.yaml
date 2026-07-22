@@ -1,0 +1,7 @@
+interface:
+  display_name: "Learn"
+  short_description: "Build an official Claude or Codex path"
+  default_prompt: "Use $learn to build a focused official learning path for my goal and time."
+
+policy:
+  allow_implicit_invocation: true

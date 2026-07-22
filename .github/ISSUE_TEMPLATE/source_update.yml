@@ -1,0 +1,38 @@
+name: Official source update
+description: Report a new, changed, moved, or removed official Anthropic or OpenAI source.
+title: "[Source]: "
+labels: [source-update]
+body:
+  - type: input
+    id: source
+    attributes:
+      label: Official source URL
+      placeholder: https://...
+    validations:
+      required: true
+  - type: dropdown
+    id: change
+    attributes:
+      label: Change type
+      options:
+        - New course or tutorial
+        - New guide, workshop, or Academy resource
+        - Updated guidance
+        - Moved or broken URL
+        - New official video
+        - Catalog metadata correction
+    validations:
+      required: true
+  - type: textarea
+    id: impact
+    attributes:
+      label: What should change in the pack?
+    validations:
+      required: true
+  - type: input
+    id: checked
+    attributes:
+      label: Date checked
+      placeholder: YYYY-MM-DD
+    validations:
+      required: true
