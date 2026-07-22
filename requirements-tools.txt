@@ -1,2 +1,2 @@
 # Optional maintainer dependency for the Anthropic YouTube freshness pipeline.
-yt-dlp==2025.10.14
+yt-dlp==2026.7.4
