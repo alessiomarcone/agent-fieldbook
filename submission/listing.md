@@ -27,11 +27,11 @@ reusable knowledge cards.
 
 ## Public URLs
 
-- **Website and repository:** https://github.com/alessiomarcone/claude-knowledge-pack
-- **Support:** https://github.com/alessiomarcone/claude-knowledge-pack/blob/main/SUPPORT.md
-- **Privacy:** https://github.com/alessiomarcone/claude-knowledge-pack/blob/main/PRIVACY.md
-- **Terms:** https://github.com/alessiomarcone/claude-knowledge-pack/blob/main/TERMS.md
-- **Security:** https://github.com/alessiomarcone/claude-knowledge-pack/blob/main/SECURITY.md
+- **Website and repository:** https://github.com/alessiomarcone/agent-fieldbook
+- **Support:** https://github.com/alessiomarcone/agent-fieldbook/blob/main/SUPPORT.md
+- **Privacy:** https://github.com/alessiomarcone/agent-fieldbook/blob/main/PRIVACY.md
+- **Terms:** https://github.com/alessiomarcone/agent-fieldbook/blob/main/TERMS.md
+- **Security:** https://github.com/alessiomarcone/agent-fieldbook/blob/main/SECURITY.md
 
 ## Starter prompts
 

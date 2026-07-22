@@ -34,8 +34,8 @@ Do not copy configuration fields, commands, permission behavior, or plugin metad
 Use Python 3.10 or newer. Core checks have no third-party dependencies.
 
 ```bash
-git clone https://github.com/alessiomarcone/claude-knowledge-pack.git
-cd claude-knowledge-pack
+git clone https://github.com/alessiomarcone/agent-fieldbook.git
+cd agent-fieldbook
 python3 scripts/sync_pack.py
 python3 scripts/validate_pack.py
 python3 -m unittest discover -s tests -v

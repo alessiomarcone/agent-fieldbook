@@ -23,4 +23,4 @@ Claude and Codex use separate product references. Do not translate commands, man
 Agent Fieldbook is not an implementation of the independent Agent Knowledge
 specification. `knowledge-pack` is this plugin's technical namespace.
 
-Source, full documentation, and updates: https://github.com/alessiomarcone/claude-knowledge-pack
+Source, full documentation, and updates: https://github.com/alessiomarcone/agent-fieldbook

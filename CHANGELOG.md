@@ -23,5 +23,5 @@ All notable changes are documented here. This project follows [Semantic Versioni
 - Replaced project-specific skill names with classic public entry points such as `subagent`, `prompt`, and `verify`.
 - Moved canonical material under `knowledge/claude/` and `knowledge/codex/`.
 
-[Unreleased]: https://github.com/alessiomarcone/claude-knowledge-pack/compare/v1.0.0...HEAD
-[1.0.0]: https://github.com/alessiomarcone/claude-knowledge-pack/releases/tag/v1.0.0
+[Unreleased]: https://github.com/alessiomarcone/agent-fieldbook/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/alessiomarcone/agent-fieldbook/releases/tag/v1.0.0

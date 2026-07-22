@@ -6,8 +6,8 @@ version: "1.0.0"
 authors:
   - family-names: "Marcone"
     given-names: "Alessio"
-repository-code: "https://github.com/alessiomarcone/claude-knowledge-pack"
-url: "https://github.com/alessiomarcone/claude-knowledge-pack"
+repository-code: "https://github.com/alessiomarcone/agent-fieldbook"
+url: "https://github.com/alessiomarcone/agent-fieldbook"
 license: MIT
 keywords:
   - agent-skills

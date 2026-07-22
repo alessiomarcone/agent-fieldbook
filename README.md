@@ -6,8 +6,8 @@
 
 **Expert training, turned into source-backed skills your agent can use while it works.**
 
-[![Validate](https://github.com/alessiomarcone/claude-knowledge-pack/actions/workflows/validate.yml/badge.svg)](https://github.com/alessiomarcone/claude-knowledge-pack/actions/workflows/validate.yml)
-[![Source freshness](https://github.com/alessiomarcone/claude-knowledge-pack/actions/workflows/check-updates.yml/badge.svg)](https://github.com/alessiomarcone/claude-knowledge-pack/actions/workflows/check-updates.yml)
+[![Validate](https://github.com/alessiomarcone/agent-fieldbook/actions/workflows/validate.yml/badge.svg)](https://github.com/alessiomarcone/agent-fieldbook/actions/workflows/validate.yml)
+[![Source freshness](https://github.com/alessiomarcone/agent-fieldbook/actions/workflows/check-updates.yml/badge.svg)](https://github.com/alessiomarcone/agent-fieldbook/actions/workflows/check-updates.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-0f766e.svg)](LICENSE)
 [![Claude plugin](https://img.shields.io/badge/Claude-plugin-D97757)](https://code.claude.com/docs/en/plugins)
 [![Codex plugin](https://img.shields.io/badge/Codex-plugin-111827)](https://learn.chatgpt.com/docs/build-plugins)
@@ -83,7 +83,7 @@ behavior may have changed.
 ### Claude Code
 
 ```bash
-claude plugin marketplace add alessiomarcone/claude-knowledge-pack
+claude plugin marketplace add alessiomarcone/agent-fieldbook
 claude plugin install knowledge-pack@agent-fieldbook
 ```
 
@@ -104,7 +104,7 @@ invocation remains unambiguous during migration.
 ### Codex
 
 ```bash
-codex plugin marketplace add alessiomarcone/claude-knowledge-pack
+codex plugin marketplace add alessiomarcone/agent-fieldbook
 codex plugin add knowledge-pack@agent-fieldbook
 ```
 
@@ -123,8 +123,8 @@ the marketplace.
 ### One standalone skill
 
 ```bash
-git clone https://github.com/alessiomarcone/claude-knowledge-pack.git
-cd claude-knowledge-pack
+git clone https://github.com/alessiomarcone/agent-fieldbook.git
+cd agent-fieldbook
 
 # Claude Code
 mkdir -p ~/.claude/skills

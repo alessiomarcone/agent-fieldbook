@@ -87,7 +87,7 @@ plugins, and learning paths.
 It is independent, multilingual, MIT licensed, and has no telemetry, accounts,
 MCP server, or background runtime.
 
-https://github.com/alessiomarcone/claude-knowledge-pack
+https://github.com/alessiomarcone/agent-fieldbook
 
 ## Post di lancio breve — Italiano
 
@@ -104,7 +104,7 @@ plugin e percorsi di apprendimento.
 È indipendente, multilingue, MIT licensed e non contiene telemetria, account,
 server MCP o processi in background.
 
-https://github.com/alessiomarcone/claude-knowledge-pack
+https://github.com/alessiomarcone/agent-fieldbook
 
 ## Long launch post
 

@@ -33,7 +33,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 CLAUDE_KNOWLEDGE = ROOT / "knowledge" / "claude"
 STATE_FILE = ROOT / ".github" / "state.json"
-USER_AGENT = "agent-fieldbook-checker (+https://github.com/alessiomarcone/claude-knowledge-pack)"
+USER_AGENT = "agent-fieldbook-checker (+https://github.com/alessiomarcone/agent-fieldbook)"
 
 INDEXES = [
     {

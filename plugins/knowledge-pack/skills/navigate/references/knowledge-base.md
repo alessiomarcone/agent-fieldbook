@@ -30,8 +30,8 @@ Both source ecosystems converge on the same practical loop:
 
 ## Product branches
 
-- [Claude knowledge base](https://github.com/alessiomarcone/claude-knowledge-pack/blob/main/knowledge/claude/knowledge-base.md) — Claude, Claude Code, Cowork, AI Fluency, courses, tutorials, and Anthropic videos.
-- [Codex knowledge base](https://github.com/alessiomarcone/claude-knowledge-pack/blob/main/knowledge/codex/knowledge-base.md) — Codex surfaces, prompting, subagents, skills, plugins, permissions, and official learning resources.
+- [Claude knowledge base](https://github.com/alessiomarcone/agent-fieldbook/blob/main/knowledge/claude/knowledge-base.md) — Claude, Claude Code, Cowork, AI Fluency, courses, tutorials, and Anthropic videos.
+- [Codex knowledge base](https://github.com/alessiomarcone/agent-fieldbook/blob/main/knowledge/codex/knowledge-base.md) — Codex surfaces, prompting, subagents, skills, plugins, permissions, and official learning resources.
 
 Never transfer a configuration field from one branch to the other without checking the current official documentation. The concepts often rhyme; the manifests, commands, permissions, and agent formats do not.
 
