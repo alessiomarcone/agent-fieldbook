@@ -1,0 +1,7 @@
+interface:
+  display_name: "Cowork"
+  short_description: "Design safe and verifiable Cowork workflows"
+  default_prompt: "Use $cowork to design this Cowork workflow with approval and verification gates."
+
+policy:
+  allow_implicit_invocation: true

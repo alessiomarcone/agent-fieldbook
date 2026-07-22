@@ -4,16 +4,17 @@ Generate a categorized, current catalog of every video exposed by the official
 Anthropic YouTube channel.
 
 Requirements:
-    python -m pip install -U yt-dlp
+    python3 -m pip install -U yt-dlp
 
 Usage:
-    python update_youtube_catalog.py
-    python update_youtube_catalog.py --archive
+    python3 update_youtube_catalog.py
+    python3 update_youtube_catalog.py --archive
 """
 from __future__ import annotations
 
 import argparse
 import csv
+import importlib.util
 import json
 import re
 import shutil
@@ -63,18 +64,20 @@ CATEGORY_RULES: list[tuple[str, list[str]]] = [
     ]),
 ]
 
-def require_ytdlp() -> str:
+def require_ytdlp() -> list[str]:
     executable = shutil.which("yt-dlp")
     if executable:
-        return executable
+        return [executable]
+    if importlib.util.find_spec("yt_dlp") is not None:
+        return [sys.executable, "-m", "yt_dlp"]
     raise SystemExit(
         "yt-dlp non trovato.\n"
-        "Installa con: python -m pip install -U yt-dlp"
+        "Installa con: python3 -m pip install -U yt-dlp"
     )
 
-def fetch_catalog(ytdlp: str) -> dict[str, Any]:
+def fetch_catalog(ytdlp: list[str]) -> dict[str, Any]:
     cmd = [
-        ytdlp,
+        *ytdlp,
         "--flat-playlist",
         "--dump-single-json",
         "--no-warnings",
@@ -194,7 +197,8 @@ def main() -> None:
         deduped.append(row)
 
     checked_at = datetime.now(timezone.utc).astimezone().isoformat(timespec="seconds")
-    out_dir = Path(__file__).resolve().parent
+    out_dir = Path(__file__).resolve().parent / "knowledge" / "claude"
+    out_dir.mkdir(parents=True, exist_ok=True)
     csv_path = out_dir / "youtube_videos.csv"
     md_path = out_dir / "youtube_videos.md"
     write_csv(csv_path, deduped)
@@ -202,7 +206,7 @@ def main() -> None:
 
     if args.archive:
         stamp = datetime.now().strftime("%Y-%m-%d")
-        archive_dir = out_dir / "archive" / stamp
+        archive_dir = Path(__file__).resolve().parent / "youtube_archive" / stamp
         archive_dir.mkdir(parents=True, exist_ok=True)
         shutil.copy2(csv_path, archive_dir / csv_path.name)
         shutil.copy2(md_path, archive_dir / md_path.name)

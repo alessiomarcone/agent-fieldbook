@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If Agent Fieldbook supports your work, cite this repository."
+title: "Agent Fieldbook"
+type: software
+version: "1.0.0"
+authors:
+  - family-names: "Marcone"
+    given-names: "Alessio"
+repository-code: "https://github.com/alessiomarcone/agent-fieldbook"
+url: "https://github.com/alessiomarcone/agent-fieldbook"
+license: MIT
+keywords:
+  - agent-skills
+  - claude
+  - codex
+  - prompting
+  - subagents
+  - ai-fluency

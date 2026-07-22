@@ -1,0 +1,7 @@
+interface:
+  display_name: "Skill"
+  short_description: "Build focused and testable agent skills"
+  default_prompt: "Use $skill to turn this repeated workflow into a focused reusable skill."
+
+policy:
+  allow_implicit_invocation: true

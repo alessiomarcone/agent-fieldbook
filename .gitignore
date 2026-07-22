@@ -2,6 +2,7 @@
 __pycache__/
 *.pyc
 .venv/
+dist/
 
 # Generated YouTube catalog (regenerate with update_youtube_catalog.py)
 youtube_videos.csv

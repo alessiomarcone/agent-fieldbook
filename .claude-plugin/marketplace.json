@@ -1,0 +1,18 @@
+{
+  "name": "agent-fieldbook",
+  "description": "Official agent learning, operationalized as source-backed skills.",
+  "owner": {
+    "name": "Alessio Marcone"
+  },
+  "plugins": [
+    {
+      "name": "knowledge-pack",
+      "source": "./plugins/knowledge-pack",
+      "description": "Ten source-backed skills for structure, prompting, verification, delegation, reusable workflows, and learning.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Alessio Marcone"
+      }
+    }
+  ]
+}

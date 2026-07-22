@@ -1,22 +1,31 @@
 {
-  "name": "Claude Knowledge Pack",
-  "version": "2026.07.17",
-  "verified_on": "2026-07-17",
-  "language": "it",
-  "courses": 21,
-  "tutorials": 30,
-  "youtube_channel": "https://www.youtube.com/@anthropic-ai",
+  "name": "Agent Fieldbook",
+  "version": "1.0.0",
+  "verified_on": "2026-07-22",
+  "language": "multilingual",
+  "skills": 10,
+  "claude_courses": 21,
+  "claude_tutorials": 30,
+  "codex_learning_resources": 12,
+  "knowledge_cards": 12,
+  "source_ecosystems": [
+    "Anthropic",
+    "OpenAI"
+  ],
   "entry_points": {
-    "project": "claude-project-instructions.md",
+    "knowledge": "knowledge-base.md",
+    "claude_project": "claude-project-instructions.md",
     "session": "session-bootstrap-prompt.md",
     "claude_code": "CLAUDE.md",
-    "skill": "skill/claude-power-user/SKILL.md"
+    "plugin": "plugins/knowledge-pack",
+    "skill": "plugins/knowledge-pack/skills/navigate/SKILL.md"
   },
   "youtube_pipeline": {
+    "channel": "https://www.youtube.com/@anthropic-ai",
     "catalog": "update_youtube_catalog.py",
     "transcripts": "download_youtube_transcripts.py",
     "workflow": "youtube-ingestion-workflow.md",
-    "knowledge_card_prompt": "video-knowledge-card-prompt.md",
-    "schema": "video_knowledge_card.schema.json"
+    "knowledge_card_prompt": "knowledge-card-prompt.md",
+    "schema": "knowledge-card.schema.json"
   }
 }

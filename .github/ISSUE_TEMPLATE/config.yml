@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Claude product support
+    url: https://support.claude.com/
+    about: Use official support for account, billing, or product-access questions.
+  - name: OpenAI product support
+    url: https://help.openai.com/
+    about: Use official support for ChatGPT, Codex, account, billing, or product-access questions.
+  - name: Security report
+    url: https://github.com/alessiomarcone/claude-knowledge-pack/security/advisories/new
+    about: Report vulnerabilities privately; do not disclose exploit details in an issue.

@@ -1,0 +1,20 @@
+{
+  "name": "agent-fieldbook",
+  "interface": {
+    "displayName": "Agent Fieldbook"
+  },
+  "plugins": [
+    {
+      "name": "knowledge-pack",
+      "source": {
+        "source": "local",
+        "path": "./plugins/knowledge-pack"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Education & Research"
+    }
+  ]
+}

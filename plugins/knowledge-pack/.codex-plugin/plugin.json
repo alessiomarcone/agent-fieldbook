@@ -1,0 +1,45 @@
+{
+  "name": "knowledge-pack",
+  "version": "1.0.0",
+  "description": "Ten source-backed skills that turn official Claude and Codex learning into reliable daily workflows.",
+  "author": {
+    "name": "Alessio Marcone",
+    "url": "https://github.com/alessiomarcone"
+  },
+  "homepage": "https://github.com/alessiomarcone/claude-knowledge-pack#readme",
+  "repository": "https://github.com/alessiomarcone/claude-knowledge-pack",
+  "license": "MIT",
+  "keywords": [
+    "agent-skills",
+    "ai-fluency",
+    "claude",
+    "codex",
+    "learning",
+    "prompting",
+    "subagents"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Agent Fieldbook",
+    "shortDescription": "Turn official agent training into daily workflows.",
+    "longDescription": "Agent Fieldbook turns publicly available Anthropic training and current OpenAI guidance into ten focused, multilingual skills for choosing the right agent mechanism, writing reliable prompts, verifying outputs, defining subagents, building skills and plugins, and learning from the original sources.",
+    "developerName": "Alessio Marcone",
+    "category": "Education & Research",
+    "capabilities": [
+      "Reference",
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/alessiomarcone/claude-knowledge-pack",
+    "privacyPolicyURL": "https://github.com/alessiomarcone/claude-knowledge-pack/blob/main/PRIVACY.md",
+    "termsOfServiceURL": "https://github.com/alessiomarcone/claude-knowledge-pack/blob/main/TERMS.md",
+    "defaultPrompt": [
+      "Choose the structure official guidance supports for this workflow.",
+      "Turn this rough objective into a bounded, verifiable prompt.",
+      "Check whether this agent setup follows current product guidance."
+    ],
+    "brandColor": "#0F766E",
+    "composerIcon": "./assets/logo.png",
+    "logo": "./assets/logo.png"
+  }
+}

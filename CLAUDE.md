@@ -1,25 +1,27 @@
-# CLAUDE.md
+# Repository instructions
 
-## Obiettivo
-Questo repository contiene una knowledge base ufficiale per usare Claude in modo corretto, aggiornabile e riutilizzabile.
+## Objective
 
-## Regole
-- Leggi `knowledge-base.md` quando la richiesta riguarda funzionalità o workflow Claude.
-- Usa la documentazione ufficiale come fonte primaria.
-- Non inventare capacità, piani, menu o limiti.
-- Per informazioni sensibili al tempo, segnala la data della fonte.
-- Preferisci:
-  - `CLAUDE.md` per poche convenzioni persistenti;
-  - Skill per procedure on demand;
-  - MCP/connectors per dati o azioni esterne;
-  - subagent per contesti isolati;
-  - hook per automazioni deterministiche.
-- Dopo una procedura, indica sempre come verificarla.
-- Quando un workflow ricorre, proponi l’aggiornamento della Skill `claude-power-user`.
+Maintain a universal, skills-only knowledge plugin that helps Claude and Codex users operate agents from current official sources.
 
-## File principali
-- `knowledge-base.md`
-- `courses.csv`
-- `tutorials.csv`
-- `youtube.md`
-- `sources.md`
+## Rules
+
+- Keep the public brand `Agent Fieldbook`, marketplace `agent-fieldbook`, and plugin namespace `knowledge-pack` distinct.
+- Read `knowledge-base.md` for the shared mechanism map.
+- Read only `knowledge/claude/` for Claude-specific commands or configuration.
+- Read only `knowledge/codex/` for Codex-specific commands or configuration.
+- Never translate manifest fields, agent settings, permissions, or command names by analogy.
+- Treat plans, models, limits, UI paths, commands, and feature availability as time-sensitive.
+- Prefer project instructions for durable rules, a skill for on-demand expertise, a subagent for isolated context, a hook for deterministic events, and MCP/connectors for external systems.
+- Require a verification step after every consequential procedure.
+- Never add raw transcripts, copied course lessons, credentials, or private data.
+
+## Development
+
+```bash
+python3 scripts/sync_pack.py
+python3 scripts/validate_pack.py
+python3 -m unittest discover -s tests -v
+```
+
+Keep versions aligned across `manifest.json`, both plugin manifests, and the Claude marketplace entry.

@@ -1,0 +1,7 @@
+interface:
+  display_name: "Navigate"
+  short_description: "Route work to the right agent mechanism"
+  default_prompt: "Use $navigate to route this request to the smallest appropriate mechanism."
+
+policy:
+  allow_implicit_invocation: true
