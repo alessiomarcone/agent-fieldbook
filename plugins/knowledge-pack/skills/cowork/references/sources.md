@@ -1,6 +1,6 @@
 # Fonti ufficiali
 
-**Ultima verifica:** 31 agosto 2026
+**Ultima verifica dei link:** 31 agosto 2026 — i contenuti della documentazione risalgono alla lettura del 21 luglio 2026.
 
 - [Indice corsi ufficiali](https://academy.claude.com/courses) — Elenco aggiornato dei percorsi formativi Anthropic.
 - [Indice tutorial ufficiali](https://academy.claude.com/tutorials) — Guide operative e video lesson filtrabili.

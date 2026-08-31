@@ -123,7 +123,7 @@ The repository currently includes:
 
 - ten focused Claude and Codex skills;
 - separate product branches for commands, manifests, permissions, and agents;
-- catalogs of 21 Anthropic courses, 30 tutorials, and 12 OpenAI learning resources;
+- catalogs of 25 Anthropic courses, 67 tutorials, and 12 OpenAI learning resources;
 - distilled knowledge cards with source, status, verification date, and license metadata;
 - deterministic packaging and native validation for both plugin ecosystems.
 

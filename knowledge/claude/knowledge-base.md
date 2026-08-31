@@ -1,6 +1,6 @@
 # Claude Power-User Knowledge Base
 
-**Verifica delle fonti:** 21 luglio 2026
+**Verifica delle fonti:** cataloghi corsi/tutorial e raggiungibilità dei link 31 agosto 2026; sezioni di documentazione 21 luglio 2026
 **Ambito:** materiali ufficiali Anthropic/Claude, corsi, tutorial, documentazione e canale YouTube.
 
 ## Come usare questa base
