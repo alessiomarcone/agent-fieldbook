@@ -1,6 +1,6 @@
 ---
 title: "AI Fluency — curriculum e discernimento"
-source_url: "https://claude.com/resources/tutorials"
+source_url: "https://academy.claude.com/tutorials"
 source_type: tutorial
 source_products:
   - "Claude"
@@ -21,6 +21,8 @@ license_note: "Original multi-source synthesis; linked tutorial material is not 
 # AI Fluency — curriculum e discernimento
 
 **Fonti:** getting-good-at-claude-a-research-backed-curriculum, the-4-ds-of-ai-fluency-behavioral-indicators, get-the-most-from-claude-opus-4-6, imagine-with-claude-student-guide (claude.com, sintesi 2026-07-20).
+
+> Alcune fonti citate sopra sono state ritirate da Anthropic nel 2026-08: vedi [`knowledge/claude/retired-sources.md`](https://github.com/alessiomarcone/agent-fieldbook/blob/main/knowledge/claude/retired-sources.md).
 
 ## Il modello di insegnamento in tre passi
 1. **Insegna prima la "mossa firma"** — il comportamento che sblocca tutto il resto:

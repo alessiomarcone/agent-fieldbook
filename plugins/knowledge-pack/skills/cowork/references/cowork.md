@@ -1,6 +1,6 @@
 ---
 title: "Claude Cowork — delega, personalizzazione, casi d'uso"
-source_url: "https://claude.com/resources/tutorials"
+source_url: "https://academy.claude.com/tutorials"
 source_type: tutorial
 source_products:
   - "Cowork"

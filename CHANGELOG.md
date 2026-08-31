@@ -4,6 +4,36 @@ All notable changes are documented here. This project follows [Semantic Versioni
 
 ## [Unreleased]
 
+## [1.1.0] - 2026-08-31
+
+Anthropic moved its learning material from `anthropic.skilljar.com` and
+`claude.com/resources/*` to `academy.claude.com`. The move renamed some slugs,
+promoted several tutorials into course lessons, and retired others. The weekly
+checker scraped the old index pages, so from 2026-08-24 it reported
+`page_structure_changed` and stopped seeing new material entirely.
+
+### Added
+
+- `knowledge/claude/catalog-scope.json`: declares which Academy material this repository catalogs, so vertical and per-connector guides are counted and reported as out of scope instead of raising a weekly alert.
+- `knowledge/claude/retired-sources.md`: records material Anthropic no longer publishes, with the original URL and where the content went.
+- `scripts/render_catalog.py`: generates the catalog tables in `knowledge-base.md` from the CSVs; `make render` runs it and `make sync` runs it first.
+- A `verified_on` freshness guard: `make check` fails when the recorded source audit is more than 45 days old.
+- 4 courses (AI Fluency for Creative Work, AI Fluency for pK-12 Train the Trainer, The AI-Native SDLC Playbook, Deploying Claude Enterprise with Confidence) and 41 tutorials.
+- Link-health probing for the Claude catalogs, not only the Codex one.
+- Tests for scope filtering, sitemap parsing, retired-item detection, freshness, and table rendering.
+
+### Changed
+
+- `check_official_sources.py` reads `academy.claude.com/sitemap.xml` instead of scraping the index pages: `/courses` and `/tutorials` render only a curated subset, so index scraping under-reported the catalog by 88 tutorials.
+- The checker now reports two independent signals — `CATALOG_UPDATE_NEEDED` (editorial backlog) and `SOURCE_CHECK_FAILED` (the checker cannot read a source) — and the workflow opens a separate labeled issue for each, superseding the previous run's issue instead of commenting on it.
+- Every catalog URL migrated to `academy.claude.com`; 4 course slugs were renamed upstream.
+- Refreshed lesson counts, durations, and quiz counts for all 25 courses from the source pages.
+- The knowledge-base catalog tables are generated from the CSVs and must not be edited by hand.
+
+### Removed
+
+- 4 tutorials retired by Anthropic: How AI gets its character (now a lesson of AI capabilities and limitations), Understanding knowledge gaps in AI models, Get the most from Claude Opus 4.6, Using the GitHub integration. See `retired-sources.md`.
+
 ## [1.0.0] - 2026-07-21
 
 ### Added
@@ -23,5 +53,6 @@ All notable changes are documented here. This project follows [Semantic Versioni
 - Replaced project-specific skill names with classic public entry points such as `subagent`, `prompt`, and `verify`.
 - Moved canonical material under `knowledge/claude/` and `knowledge/codex/`.
 
-[Unreleased]: https://github.com/alessiomarcone/agent-fieldbook/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/alessiomarcone/agent-fieldbook/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/alessiomarcone/agent-fieldbook/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/alessiomarcone/agent-fieldbook/releases/tag/v1.0.0

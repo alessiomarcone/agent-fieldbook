@@ -7,6 +7,7 @@ import csv
 import json
 import re
 import sys
+from datetime import date
 from pathlib import Path
 from typing import Any
 
@@ -19,6 +20,9 @@ CARDS = CLAUDE / "cards"
 NAME_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 SEMVER_RE = re.compile(r"^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)$")
 RESERVED_SKILL_WORDS = {"anthropic", "claude"}
+# A source audit older than this is treated as a failure, not a warning: the
+# whole point of the weekly checker is that nobody notices silent drift.
+MAX_VERIFIED_AGE_DAYS = 45
 BRAND_NAME = "Agent Fieldbook"
 MARKETPLACE_NAME = "agent-fieldbook"
 
@@ -233,6 +237,35 @@ def validate_card_frontmatter(path: Path, errors: list[str]) -> None:
         errors.append(f"{path.relative_to(ROOT)} time_sensitive must be true or false")
 
 
+def validate_manifest_freshness(manifest: dict[str, Any], errors: list[str]) -> None:
+    """Fail when the recorded source audit has gone stale."""
+    verified_on = manifest.get("verified_on", "")
+    if not isinstance(verified_on, str) or re.fullmatch(r"\d{4}-\d{2}-\d{2}", verified_on) is None:
+        errors.append("manifest.json verified_on must be an ISO date (YYYY-MM-DD)")
+        return
+    age = (date.today() - date.fromisoformat(verified_on)).days
+    if age > MAX_VERIFIED_AGE_DAYS:
+        errors.append(
+            f"manifest.json verified_on is {age} days old (limit {MAX_VERIFIED_AGE_DAYS}); "
+            "re-run python3 check_official_sources.py, fix what it reports, "
+            "then update verified_on"
+        )
+
+
+def validate_rendered_catalog(errors: list[str]) -> None:
+    """Fail when the knowledge-base tables no longer match the catalog CSVs."""
+    import render_catalog
+
+    try:
+        if render_catalog.render() != render_catalog.KNOWLEDGE_BASE.read_text(encoding="utf-8"):
+            errors.append(
+                "knowledge-base.md catalog tables are stale "
+                "(run python3 scripts/render_catalog.py)"
+            )
+    except SystemExit as exc:
+        errors.append(f"knowledge-base.md catalog markers are broken: {exc}")
+
+
 def validate_catalog(
     path: Path, expected_count: int, errors: list[str]
 ) -> None:
@@ -387,6 +420,9 @@ def validate() -> list[str]:
                     f"mirrored file is stale: {destination.relative_to(ROOT)} "
                     f"(run python3 scripts/sync_pack.py)"
                 )
+
+    validate_manifest_freshness(manifest, errors)
+    validate_rendered_catalog(errors)
 
     validate_catalog(
         CLAUDE / "courses.csv",

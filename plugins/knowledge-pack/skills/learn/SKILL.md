@@ -9,8 +9,8 @@ Build a focused official learning path with accurate resource types, durations, 
 
 ## Catalogs
 
-- `references/claude-courses.csv` — 21 official Anthropic courses.
-- `references/claude-tutorials.csv` — 30 official Anthropic tutorials.
+- `references/claude-courses.csv` — 25 official Anthropic courses.
+- `references/claude-tutorials.csv` — 67 official Anthropic tutorials.
 - `references/codex-learning-resources.csv` — verified OpenAI courses, guides, videos, resources, and live series.
 
 ## Procedure

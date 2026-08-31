@@ -68,7 +68,7 @@ The repository packages the resulting operating layer as:
 
 - **10 focused skills** with classic names such as `/subagent`, `/prompt`, and `/verify`;
 - **2 native plugin manifests** for Claude and Codex;
-- **21 Anthropic courses** and **30 Anthropic tutorials** with direct links;
+- **25 Anthropic courses** and **67 Anthropic tutorials** with direct links;
 - **12 verified OpenAI learning resources**, including three formal Academy courses;
 - **12 distilled Claude knowledge cards** with procedures, failure modes, and checks;
 - **0 runtime credentials, hooks, MCP servers, or background processes**.
@@ -176,6 +176,8 @@ knowledge/
 │   ├── knowledge-base.md
 │   ├── courses.csv
 │   ├── tutorials.csv
+│   ├── catalog-scope.json
+│   ├── retired-sources.md
 │   ├── claude-code-plugins.md
 │   ├── claude-code-subagents.md
 │   ├── sources.md
@@ -211,11 +213,21 @@ The source hierarchy is:
 3. official videos and workshops as explanatory material;
 4. explicit uncertainty plus a verification step for sensitive details.
 
-Claude catalog freshness runs weekly:
+Claude catalog freshness runs weekly against the Claude Academy sitemap:
 
 ```bash
 python3 check_official_sources.py
 ```
+
+It reports two independent signals. `CATALOG_UPDATE_NEEDED` means official
+material changed and the catalog needs an edit. `SOURCE_CHECK_FAILED` means the
+checker could not read a source, so the catalog is unmonitored until it is
+fixed. Each opens its own labeled issue.
+
+What belongs in the catalog is declared in
+[catalog-scope.json](knowledge/claude/catalog-scope.json); material Anthropic
+has retired is recorded in
+[retired-sources.md](knowledge/claude/retired-sources.md) rather than deleted.
 
 Raw transcripts are never committed. The YouTube pipeline stores only original distilled cards; see [youtube-ingestion-workflow.md](youtube-ingestion-workflow.md).
 

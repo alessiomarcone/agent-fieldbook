@@ -1,9 +1,10 @@
 # Fonti ufficiali
 
-**Ultima verifica:** 21 luglio 2026
+**Ultima verifica dei link:** 31 agosto 2026 — i contenuti della documentazione risalgono alla lettura del 21 luglio 2026.
 
-- [Indice corsi ufficiali](https://claude.com/resources/courses) — Elenco aggiornato dei percorsi formativi Anthropic.
-- [Indice tutorial ufficiali](https://claude.com/resources/tutorials) — Guide operative e video lesson filtrabili.
+- [Indice corsi ufficiali](https://academy.claude.com/courses) — Elenco aggiornato dei percorsi formativi Anthropic.
+- [Indice tutorial ufficiali](https://academy.claude.com/tutorials) — Guide operative e video lesson filtrabili.
+- [Sitemap Claude Academy](https://academy.claude.com/sitemap.xml) — Elenco completo di corsi e tutorial pubblicati; gli indici `/courses` e `/tutorials` ne mostrano solo un sottoinsieme curato.
 - [Risorse Claude Platform](https://platform.claude.com/docs/en/resources/overview) — Indice per documentazione, quickstart, cookbook, corsi e risorse ottimizzate per AI.
 - [Estendere Claude Code](https://code.claude.com/docs/en/features-overview) — Mappa decisionale tra CLAUDE.md, Skill, subagent, MCP, hook e plugin.
 - [Directory .claude](https://code.claude.com/docs/en/claude-directory) — Struttura canonica dei file di configurazione Claude Code.
@@ -13,7 +14,7 @@
 - [Usare le Skills](https://support.claude.com/en/articles/12512180-use-skills-in-claude) — Installazione, attivazione e uso delle Skills.
 - [Creare e gestire Projects](https://support.claude.com/en/articles/9519177-how-can-i-create-and-manage-projects) — Knowledge base persistente e istruzioni di progetto.
 - [Directory Skills, connectors e plugins](https://support.claude.com/en/articles/14328846-browse-skills-connectors-and-plugins-in-one-directory) — Catalogo unificato delle estensioni.
-- [Getting started with connectors](https://claude.com/resources/tutorials/getting-started-with-connectors) — Collegare fonti e strumenti esterni.
+- [Getting started with connectors](https://academy.claude.com/tutorials/getting-started-with-connectors) — Collegare fonti e strumenti esterni.
 
 ## YouTube
 

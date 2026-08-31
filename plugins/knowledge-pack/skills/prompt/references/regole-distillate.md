@@ -1,6 +1,6 @@
 ---
 title: "Regole operative distillate dai tutorial ufficiali"
-source_url: "https://claude.com/resources/tutorials"
+source_url: "https://academy.claude.com/tutorials"
 source_type: tutorial
 source_products:
   - "Claude"
@@ -20,7 +20,7 @@ license_note: "Original multi-source synthesis; linked tutorial material is not 
 
 # Regole operative distillate dai tutorial ufficiali
 
-**Fonte:** tutorial claude.com/resources/tutorials — estratti e sintetizzati il 2026-07-20.
+**Fonte:** tutorial ufficiali Anthropic — estratti e sintetizzati il 2026-07-20 da `claude.com/resources/tutorials`, indirizzo migrato in `academy.claude.com/tutorials` nel 2026-08.
 **Uso:** regole trasversali da applicare in ogni sessione. Le procedure specifiche per prodotto sono nelle altre card.
 
 ## Regole universali (valgono per Chat, Code, Cowork, Excel, @Claude)

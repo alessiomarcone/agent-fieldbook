@@ -19,8 +19,8 @@ Aggiornamento 2026-07-20: transcript estratti via yt-dlp (auto-caption YouTube) 
 ## Ancora mancanti
 | Tutorial | URL | Motivo |
 |---|---|---|
-| The 4 Ds — behavioral indicators | https://claude.com/resources/tutorials/the-4-ds-of-ai-fluency-behavioral-indicators | nessun video YouTube embeddato; contenuto = prompt scorecard interattivo. Framework 4D già coperto da `ai-fluency-4d-corso.md` |
-| Using the GitHub integration | https://claude.com/resources/tutorials/using-the-github-integration | nessun video YouTube embeddato nella pagina. Fonte alternativa: doc ufficiale code.claude.com |
+| The 4 Ds — behavioral indicators | https://academy.claude.com/tutorials/the-4-ds-of-ai-fluency-behavioral-indicators | nessun video YouTube embeddato; contenuto = prompt scorecard interattivo. Framework 4D già coperto da `ai-fluency-4d-corso.md` |
+| Using the GitHub integration | — | Tutorial ritirato da Anthropic nel 2026-08 (vedi `retired-sources.md`). Fonte alternativa: doc ufficiale code.claude.com |
 
 ## Come rigenerare/estendere
 1. `python3 update_youtube_catalog.py` per il catalogo canale.

@@ -1,6 +1,6 @@
 ---
 title: "Corso AI Fluency: Framework & Foundations — le 4D complete"
-source_url: "https://anthropic.skilljar.com/ai-fluency-framework-foundations"
+source_url: "https://academy.claude.com/courses/ai-fluency-framework-foundations"
 source_type: course
 source_products:
   - "AI Fluency"
@@ -20,7 +20,7 @@ license_note: "Original synthesis; source material and transcripts are not redis
 # Corso AI Fluency: Framework & Foundations — le 4D complete
 
 **Fonte:** transcript delle lezioni del corso ufficiale (canale YouTube Anthropic, sintesi 2026-07-20): 4D Framework, Delegation, Description, Discernment, Diligence, Effective prompting.
-Il corso Skilljar completo: https://anthropic.skilljar.com/ai-fluency-framework-foundations
+Il corso Skilljar completo: https://academy.claude.com/courses/ai-fluency-framework-foundations
 
 **AI Fluency = lavorare con l'AI in modo efficace, efficiente, etico e sicuro.** Le 4D non sono legate a tool specifici: sopravvivono all'evoluzione della tecnologia.
 

@@ -1,0 +1,25 @@
+{
+  "description": "Which official Claude Academy material this repository catalogs. The freshness checker uses these rules so that out-of-scope material is counted but does not raise a weekly alert.",
+  "rationale": "Claude Academy publishes a broad tutorial library that includes vertical, partner, and connector-specific guides. Agent Fieldbook catalogs general Claude and Codex product workflows, so vertical material is tracked as out of scope instead of being added to the catalog.",
+  "sitemap": "https://academy.claude.com/sitemap.xml",
+  "sections": {
+    "courses": {
+      "url": "https://academy.claude.com/courses",
+      "catalog": "knowledge/claude/courses.csv",
+      "exclude": []
+    },
+    "tutorials": {
+      "url": "https://academy.claude.com/tutorials",
+      "catalog": "knowledge/claude/tutorials.csv",
+      "exclude": [
+        "^using-the-.+-(connector|extension)-in-claude$",
+        "^how-to-use-the-.+-(skill|skill-bundle|agent-skill)-with-claude",
+        "^(claude-for|getting-started-with-claude-for)-(financial-services|life-sciences|nonprofits)",
+        "^claude-for-nonprofits-partnership-",
+        "^(financial-analysis-workflows-with-claude|prompting-strategies-for-financial-analysis|install-financial-services-plugins-for-cowork)$",
+        "^using-(aiera|chronograph|daloopa|databricks|egnyte|factset|lseg|moodys|morningstar|mt-newswires|pitchbook|s-p-global)"
+      ]
+    }
+  },
+  "exclude_note": "Excluded slugs are industry-vertical or partner-integration guides (financial services, life sciences, nonprofit partnerships, and per-connector how-tos). Remove a pattern here to bring that material back into the catalog."
+}

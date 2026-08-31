@@ -1,4 +1,4 @@
-.PHONY: check package sync test
+.PHONY: check package render sync test
 
 check:
 	python3 scripts/validate_pack.py
@@ -7,7 +7,10 @@ check:
 package: check
 	python3 scripts/package_plugin.py
 
-sync:
+render:
+	python3 scripts/render_catalog.py
+
+sync: render
 	python3 scripts/sync_pack.py
 
 test:

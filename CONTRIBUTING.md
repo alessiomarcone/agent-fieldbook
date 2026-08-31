@@ -36,9 +36,8 @@ Use Python 3.10 or newer. Core checks have no third-party dependencies.
 ```bash
 git clone https://github.com/alessiomarcone/agent-fieldbook.git
 cd agent-fieldbook
-python3 scripts/sync_pack.py
-python3 scripts/validate_pack.py
-python3 -m unittest discover -s tests -v
+make sync    # renders the knowledge-base tables, then mirrors into the plugin
+make check   # validation and tests
 ```
 
 If Claude Code is installed:
@@ -50,12 +49,40 @@ claude plugin validate plugins/knowledge-pack --strict
 
 ## Catalog updates
 
+`knowledge/claude/courses.csv` and `knowledge/claude/tutorials.csv` are the
+single source of truth. The catalog tables in `knowledge/claude/knowledge-base.md`
+sit between `<!-- catalog:*:start -->` markers and are generated: edit the CSV,
+never the table.
+
 - Preserve existing CSV columns and UTF-8 encoding.
 - Use canonical `https://` URLs and avoid duplicates.
+- Run `python3 check_official_sources.py` to see what changed upstream.
 - Update the relevant file under `knowledge/`.
-- Run `python3 scripts/sync_pack.py`.
+- Run `make sync` (renders the tables, then mirrors into the plugin).
 - Update counts and `verified_on` in `manifest.json`.
-- Run the full validation suite.
+- Run `make check`.
+
+### Scope
+
+`knowledge/claude/catalog-scope.json` declares which Claude Academy material
+this repository catalogs. Claude Academy publishes vertical and partner
+integration guides (financial services, life sciences, per-connector how-tos)
+that fall outside the fieldbook: the checker counts them, reports them as out
+of scope, and does not raise a weekly alert for them. Removing a pattern from
+that file brings the material back in scope, and the next run will report every
+matching slug as uncataloged.
+
+### Retired sources
+
+When Anthropic retires material, move the row to
+`knowledge/claude/retired-sources.md` with its original URL and last-seen date
+instead of deleting it silently. Knowledge cards cite sources by name, and a
+deleted row makes a cited source indistinguishable from one that never existed.
+
+### Freshness
+
+`manifest.json` carries `verified_on`. `make check` fails when it is more than
+45 days old, so an unattended catalog breaks CI instead of drifting quietly.
 
 ## Skill changes
 

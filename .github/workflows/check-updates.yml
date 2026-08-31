@@ -16,7 +16,7 @@ concurrency:
 jobs:
   check:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v7
 
@@ -31,69 +31,80 @@ jobs:
         id: check
         run: |
           python3 check_official_sources.py --update-state | tee report.txt
-          {
-            echo "report<<EOF"
-            cat report.txt
-            echo "EOF"
-          } >> "$GITHUB_OUTPUT"
-          if grep -q "NEW_ITEMS_FOUND\|SOURCE_CHECK_FAILED" report.txt; then
-            echo "notify=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "notify=false" >> "$GITHUB_OUTPUT"
+          if grep -q "CATALOG_UPDATE_NEEDED" report.txt; then
+            echo "catalog=true" >> "$GITHUB_OUTPUT"
+          fi
+          if grep -q "SOURCE_CHECK_FAILED" report.txt; then
+            echo "broken=true" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Open issue when new material is found
-        if: steps.check.outputs.notify == 'true'
+      # The two signals are reported separately: a catalog that needs an edit is
+      # editorial backlog, a checker that cannot read its sources is a bug. One
+      # issue per run per signal, so the current state is always the issue body
+      # rather than the last comment on a months-old thread.
+      - name: Report findings
+        if: steps.check.outputs.catalog == 'true' || steps.check.outputs.broken == 'true'
         uses: actions/github-script@v9
+        env:
+          CATALOG: ${{ steps.check.outputs.catalog }}
+          BROKEN: ${{ steps.check.outputs.broken }}
         with:
           script: |
             const fs = require("fs");
-            const report = fs.readFileSync("report.txt", "utf8");
-            const title = `New official learning material detected (${new Date().toISOString().slice(0, 10)})`;
-            try {
-              await github.rest.issues.getLabel({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                name: "source-update",
-              });
-            } catch (error) {
-              if (error.status !== 404) throw error;
-              await github.rest.issues.createLabel({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                name: "source-update",
-                color: "1D76DB",
-                description: "Official source catalog needs review",
-              });
-            }
-            const { data: issues } = await github.rest.issues.listForRepo({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              state: "open",
-              labels: "source-update",
-            });
-            const body = [
-              "The weekly check found official material not yet cataloged, a source page that changed structure, or a catalog link that became unreachable.",
-              "",
-              "```", report.trim(), "```",
-              "",
-              "To update: edit the relevant file under `knowledge/`, run `python3 scripts/sync_pack.py`, update `manifest.json`, and run `make check`.",
+            const report = fs.readFileSync("report.txt", "utf8").trim();
+            const today = new Date().toISOString().slice(0, 10);
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+
+            const ensureLabel = async (name, color, description) => {
+              try {
+                await github.rest.issues.getLabel({ owner, repo, name });
+              } catch (error) {
+                if (error.status !== 404) throw error;
+                await github.rest.issues.createLabel({ owner, repo, name, color, description });
+              }
+            };
+
+            const howToFix = [
+              "1. Edit the relevant catalog under `knowledge/`.",
+              "2. `python3 scripts/render_catalog.py` to rebuild the knowledge-base tables.",
+              "3. `python3 scripts/sync_pack.py` to refresh the plugin mirrors.",
+              "4. Update the counts and `verified_on` in `manifest.json`.",
+              "5. `make check`.",
             ].join("\n");
-            if (issues.length > 0) {
-              await github.rest.issues.createComment({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                issue_number: issues[0].number,
-                body,
+
+            const open = async (label, title, intro) => {
+              const body = [intro, "", "```", report, "```", "", "### How to close this", howToFix].join("\n");
+              const { data: existing } = await github.rest.issues.listForRepo({
+                owner, repo, state: "open", labels: label,
               });
-            } else {
-              await github.rest.issues.create({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                title,
-                body,
-                labels: ["source-update"],
-              });
+              // Supersede the previous run's issue instead of appending to it, so
+              // the issue body is always the current state of the catalog.
+              for (const issue of existing) {
+                await github.rest.issues.createComment({
+                  owner, repo, issue_number: issue.number,
+                  body: `Superseded by the ${today} run.`,
+                });
+                await github.rest.issues.update({ owner, repo, issue_number: issue.number, state: "closed" });
+              }
+              await github.rest.issues.create({ owner, repo, title, body, labels: [label] });
+            };
+
+            if (process.env.CATALOG === "true") {
+              await ensureLabel("source-update", "1D76DB", "Official source catalog needs an edit");
+              await open(
+                "source-update",
+                `Catalog update needed (${today})`,
+                "The weekly check found official material that is published but not cataloged, or cataloged but no longer published.",
+              );
+            }
+            if (process.env.BROKEN === "true") {
+              await ensureLabel("checker-broken", "B60205", "The freshness checker could not read a source");
+              await open(
+                "checker-broken",
+                `Source checker cannot read a source (${today})`,
+                "The weekly check could not read one of its sources. This is a checker bug, not editorial backlog: until it is fixed the catalog is unmonitored.",
+              );
             }
 
       - name: Persist YouTube state

@@ -6,6 +6,7 @@ import subprocess
 import sys
 import tempfile
 import unittest
+from datetime import date, timedelta
 import urllib.parse
 import zipfile
 from pathlib import Path
@@ -15,6 +16,10 @@ from unittest import mock
 import check_official_sources
 import download_youtube_transcripts
 import update_youtube_catalog
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+import render_catalog  # noqa: E402
+import validate_pack  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -64,7 +69,7 @@ class SourceCheckTests(unittest.TestCase):
     def test_normalize_expands_relative_urls(self) -> None:
         self.assertEqual(
             check_official_sources.normalize("/resources/tutorials/example/"),
-            "https://claude.com/resources/tutorials/example",
+            "https://academy.claude.com/tutorials/example",
         )
 
     def test_youtube_state_changes_only_when_requested(self) -> None:
@@ -90,6 +95,85 @@ class SourceCheckTests(unittest.TestCase):
 
                 check_official_sources.check_youtube(update_state=True)
                 self.assertTrue(state_file.exists())
+
+    def test_normalize_maps_legacy_course_paths(self) -> None:
+        self.assertEqual(
+            check_official_sources.normalize("/resources/courses"),
+            "https://academy.claude.com/courses",
+        )
+
+    def test_sitemap_slugs_keeps_only_top_level_entries(self) -> None:
+        xml = """<urlset>
+          <url><loc>https://academy.claude.com/courses/claude-101</loc></url>
+          <url><loc>https://academy.claude.com/courses/claude-101/lesson-one</loc></url>
+          <url><loc>https://academy.claude.com/tutorials/what-are-skills/</loc></url>
+          <url><loc>https://academy.claude.com/use-cases/something</loc></url>
+        </urlset>"""
+        with mock.patch.object(check_official_sources, "fetch", return_value=xml):
+            found = check_official_sources.sitemap_slugs("https://example.invalid/sitemap.xml")
+        self.assertEqual(found["courses"], {"claude-101"})
+        self.assertEqual(found["tutorials"], {"what-are-skills"})
+
+    def test_check_section_separates_scope_new_and_retired(self) -> None:
+        published = {"kept", "brand-new", "using-the-acme-connector-in-claude"}
+        config = {"exclude": [r"^using-the-.+-connector-in-claude$"]}
+        with mock.patch.object(
+            check_official_sources, "catalog_urls",
+            return_value=[
+                "https://academy.claude.com/tutorials/kept",
+                "https://academy.claude.com/tutorials/gone",
+            ],
+        ):
+            result = check_official_sources.check_section("tutorials", config, published)
+        self.assertEqual(result["status"], "ok")
+        self.assertEqual(result["out_of_scope"], 1)
+        self.assertEqual(result["new"], ["brand-new"])
+        self.assertEqual(result["retired"], ["gone"])
+
+    def test_check_section_flags_an_empty_sitemap_section(self) -> None:
+        result = check_official_sources.check_section("tutorials", {"exclude": []}, set())
+        self.assertEqual(result["status"], "sitemap_structure_changed")
+
+    def test_catalog_scope_patterns_compile(self) -> None:
+        scope = check_official_sources.load_scope()
+        for section in scope["sections"].values():
+            for pattern in section["exclude"]:
+                re.compile(pattern)
+
+
+class FreshnessTests(unittest.TestCase):
+    def test_stale_verified_on_is_an_error(self) -> None:
+        stale = date.today() - timedelta(days=validate_pack.MAX_VERIFIED_AGE_DAYS + 1)
+        errors: list[str] = []
+        validate_pack.validate_manifest_freshness({"verified_on": stale.isoformat()}, errors)
+        self.assertEqual(len(errors), 1)
+        self.assertIn("verified_on", errors[0])
+
+    def test_recent_verified_on_passes(self) -> None:
+        fresh = date.today() - timedelta(days=1)
+        errors: list[str] = []
+        validate_pack.validate_manifest_freshness({"verified_on": fresh.isoformat()}, errors)
+        self.assertEqual(errors, [])
+
+    def test_malformed_verified_on_is_an_error(self) -> None:
+        errors: list[str] = []
+        validate_pack.validate_manifest_freshness({"verified_on": "yesterday"}, errors)
+        self.assertEqual(len(errors), 1)
+
+
+class RenderCatalogTests(unittest.TestCase):
+    def test_rendered_tables_match_the_committed_knowledge_base(self) -> None:
+        self.assertEqual(
+            render_catalog.render(),
+            render_catalog.KNOWLEDGE_BASE.read_text(encoding="utf-8"),
+            "knowledge-base.md catalog tables are stale; run scripts/render_catalog.py",
+        )
+
+    def test_every_catalog_url_appears_in_the_rendered_tables(self) -> None:
+        rendered = render_catalog.render()
+        for path in (render_catalog.COURSES, render_catalog.TUTORIALS):
+            for row in render_catalog.read_rows(path):
+                self.assertIn(row["URL"], rendered)
 
 
 class RepositoryTests(unittest.TestCase):
