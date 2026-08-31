@@ -1,6 +1,6 @@
 ---
 title: "Claude Desktop App — Chat, Cowork, Code"
-source_url: "https://claude.com/resources/tutorials"
+source_url: "https://academy.claude.com/tutorials"
 source_type: tutorial
 source_products:
   - "Claude Desktop"

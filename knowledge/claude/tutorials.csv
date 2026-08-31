@@ -1,31 +1,68 @@
 ﻿Categoria,Tutorial,Prodotto/Funzione,Obiettivo,URL
-AI literacy,How AI gets its character,Modelli / comportamento,Capire come vengono modellati stile e comportamento dei sistemi AI,https://claude.com/resources/tutorials/how-ai-gets-its-character
-AI literacy,Understanding knowledge gaps in AI models,Limiti / verifica,Riconoscere lacune di conoscenza e calibrare la fiducia,https://claude.com/resources/tutorials/understanding-knowledge-gaps-in-ai-models
-Claude.ai / Team,Tasks to try with @Claude in your workspace,@Claude,Esempi di attività collaborative nei workspace,https://claude.com/resources/tutorials/tasks-to-try-with-claude-tag-in-your-workspace
-Claude.ai / Team,Best practices using @Claude,@Claude,"Buone pratiche per menzioni, richieste e collaborazione",https://claude.com/resources/tutorials/best-practices-using-claude-tag
-Claude Cowork,Using Claude Cowork for legal question briefing,Cowork,Preparare briefing legali con fonti e controllo umano,https://claude.com/resources/tutorials/using-claude-cowork-for-legal-question-briefing
-Claude Cowork,Using Claude Cowork for sales account research,Cowork,Delegare la ricerca commerciale e sintetizzare account,https://claude.com/resources/tutorials/using-claude-cowork-for-sales-account-research
-Claude Cowork,Using Claude Cowork for marketing ops review,Cowork,Analizzare processi e materiali di marketing operations,https://claude.com/resources/tutorials/using-claude-cowork-for-marketing-ops-review
-Business,Using Claude for your small business,Claude.ai,Applicazioni operative per piccole imprese,https://claude.com/resources/tutorials/using-claude-for-your-small-business
-Claude Cowork,Delegating your first task in Claude Cowork,Cowork,Impostare una prima delega ben definita,https://claude.com/resources/tutorials/delegating-your-first-task-in-claude-cowork
-Claude Cowork,Customize Claude Cowork,Cowork,Personalizzare modalità di lavoro e contesto,https://claude.com/resources/tutorials/customize-claude-cowork
-AI Fluency,The 4 Ds of AI Fluency: behavioral indicators,4D framework,Usare indicatori osservabili per migliorare la collaborazione con l’AI,https://claude.com/resources/tutorials/the-4-ds-of-ai-fluency-behavioral-indicators
-AI literacy,What is sycophancy in AI models,Limiti / verifica,Riconoscere risposte compiacenti e ridurre il bias di conferma,https://claude.com/resources/tutorials/what-is-sycophancy-in-ai-models
-AI literacy,Why do AI models hallucinate,Limiti / verifica,Capire le allucinazioni e impostare verifiche,https://claude.com/resources/tutorials/why-do-ai-models-hallucinate
-Design,Using Claude Design for prototypes and UX,Claude Design,Creare prototipi e supportare il processo UX,https://claude.com/resources/tutorials/using-claude-design-for-prototypes-and-ux
-Design,Using Claude Design for presentations and slide decks,Claude Design,Produrre e iterare presentazioni,https://claude.com/resources/tutorials/using-claude-design-for-presentations-and-slide-decks
-Agenti,What is Claude managed agents,Managed agents,Capire quando utilizzare agenti gestiti,https://claude.com/resources/tutorials/what-is-claude-managed-agents
-Percorso consigliato,Getting good at Claude: a research-backed curriculum,Claude.ai,Seguire un percorso progressivo basato sulla ricerca,https://claude.com/resources/tutorials/getting-good-at-claude-a-research-backed-curriculum
-Claude Code,Using Claude Code Remote Control,Remote Control,Controllare sessioni Claude Code da remoto,https://claude.com/resources/tutorials/using-claude-code-remote-control
-Education,Imagine with Claude: student guide,Claude.ai,Attività guidate per studenti,https://claude.com/resources/tutorials/imagine-with-claude-student-guide
-Claude.ai,Choosing the right Claude model,Modelli,"Scegliere il modello in base a complessità, velocità e costo",https://claude.com/resources/tutorials/choosing-the-right-claude-model
-Claude Cowork / Plugin,How to customize plugins in Cowork,Plugin,Adattare plugin esistenti ai propri workflow,https://claude.com/resources/tutorials/how-to-customize-plugins-in-cowork
-Claude Cowork / Plugin,How to build a plugin from scratch in Cowork,Plugin,Costruire un plugin Cowork da zero,https://claude.com/resources/tutorials/how-to-build-a-plugin-from-scratch-in-cowork
-Claude Code / Skills,How skills compare to other Claude Code features,Skills,"Distinguere Skill, CLAUDE.md, subagent, MCP, hook e plugin",https://claude.com/resources/tutorials/how-skills-compare-to-other-claude-code-features
-Claude Code / Skills,What are skills,Skills,Comprendere struttura e casi d’uso delle Skill,https://claude.com/resources/tutorials/what-are-skills
-Claude Desktop,Navigating the Claude desktop app,Desktop app,Orientarsi nell’app desktop,https://claude.com/resources/tutorials/navigating-the-claude-desktop-app
-Claude.ai,Get the most from Claude Opus 4.6,Modelli,Sfruttare le capacità del modello Opus 4.6,https://claude.com/resources/tutorials/get-the-most-from-claude-opus-4-6
-Excel,Getting started with Claude in Excel,Claude in Excel,Impostare l’integrazione e il primo workflow,https://claude.com/resources/tutorials/getting-started-with-claude-in-excel
-Excel / Finance,How to use Claude in Excel for accounting revenue model validation,Claude in Excel,Validare modelli di ricavo e controlli contabili,https://claude.com/resources/tutorials/how-to-use-claude-in-excel-for-accounting-revenue-model-validation
-Excel / HR,How to use Claude in Excel for HR headcount planning,Claude in Excel,Analizzare e pianificare l’organico,https://claude.com/resources/tutorials/how-to-use-claude-in-excel-for-hr-headcount-planning
-Claude Code / GitHub,Using the GitHub integration,GitHub,Collegare repository e usare il contesto GitHub,https://claude.com/resources/tutorials/using-the-github-integration
+Claude.ai / Team,Tasks to try with @Claude in your workspace,@Claude,Esempi di attività collaborative nei workspace,https://academy.claude.com/tutorials/tasks-to-try-with-claude-tag-in-your-workspace
+Claude.ai / Team,Best practices using @Claude,@Claude,"Buone pratiche per menzioni, richieste e collaborazione",https://academy.claude.com/tutorials/best-practices-using-claude-tag
+Claude Cowork,Using Claude Cowork for legal question briefing,Cowork,Preparare briefing legali con fonti e controllo umano,https://academy.claude.com/tutorials/using-claude-cowork-for-legal-question-briefing
+Claude Cowork,Using Claude Cowork for sales account research,Cowork,Delegare la ricerca commerciale e sintetizzare account,https://academy.claude.com/tutorials/using-claude-cowork-for-sales-account-research
+Claude Cowork,Using Claude Cowork for marketing ops review,Cowork,Analizzare processi e materiali di marketing operations,https://academy.claude.com/tutorials/using-claude-cowork-for-marketing-ops-review
+Business,Using Claude for your small business,Claude.ai,Applicazioni operative per piccole imprese,https://academy.claude.com/tutorials/using-claude-for-your-small-business
+Claude Cowork,Delegating your first task in Claude Cowork,Cowork,Impostare una prima delega ben definita,https://academy.claude.com/tutorials/delegating-your-first-task-in-claude-cowork
+Claude Cowork,Customize Claude Cowork,Cowork,Personalizzare modalità di lavoro e contesto,https://academy.claude.com/tutorials/customize-claude-cowork
+AI Fluency,The 4 Ds of AI Fluency: behavioral indicators,4D framework,Usare indicatori osservabili per migliorare la collaborazione con l’AI,https://academy.claude.com/tutorials/the-4-ds-of-ai-fluency-behavioral-indicators
+AI literacy,What is sycophancy in AI models,Limiti / verifica,Riconoscere risposte compiacenti e ridurre il bias di conferma,https://academy.claude.com/tutorials/what-is-sycophancy-in-ai-models
+AI literacy,Why do AI models hallucinate,Limiti / verifica,Capire le allucinazioni e impostare verifiche,https://academy.claude.com/tutorials/why-do-ai-models-hallucinate
+Design,Using Claude Design for prototypes and UX,Claude Design,Creare prototipi e supportare il processo UX,https://academy.claude.com/tutorials/using-claude-design-for-prototypes-and-ux
+Design,Using Claude Design for presentations and slide decks,Claude Design,Produrre e iterare presentazioni,https://academy.claude.com/tutorials/using-claude-design-for-presentations-and-slide-decks
+Agenti,What is Claude managed agents,Managed agents,Capire quando utilizzare agenti gestiti,https://academy.claude.com/tutorials/what-is-claude-managed-agents
+Percorso consigliato,Getting good at Claude: a research-backed curriculum,Claude.ai,Seguire un percorso progressivo basato sulla ricerca,https://academy.claude.com/tutorials/getting-good-at-claude-a-research-backed-curriculum
+Claude Code,Using Claude Code Remote Control,Remote Control,Controllare sessioni Claude Code da remoto,https://academy.claude.com/tutorials/using-claude-code-remote-control
+Education,Imagine with Claude: student guide,Claude.ai,Attività guidate per studenti,https://academy.claude.com/tutorials/imagine-with-claude-student-guide
+Claude.ai,Choosing the right Claude model,Modelli,"Scegliere il modello in base a complessità, velocità e costo",https://academy.claude.com/tutorials/choosing-the-right-claude-model
+Claude Cowork / Plugin,How to customize plugins in Cowork,Plugin,Adattare plugin esistenti ai propri workflow,https://academy.claude.com/tutorials/how-to-customize-plugins-in-cowork
+Claude Cowork / Plugin,How to build a plugin from scratch in Cowork,Plugin,Costruire un plugin Cowork da zero,https://academy.claude.com/tutorials/how-to-build-a-plugin-from-scratch-in-cowork
+Claude Code / Skills,How skills compare to other Claude Code features,Skills,"Distinguere Skill, CLAUDE.md, subagent, MCP, hook e plugin",https://academy.claude.com/tutorials/how-skills-compare-to-other-claude-code-features
+Claude Code / Skills,What are skills,Skills,Comprendere struttura e casi d’uso delle Skill,https://academy.claude.com/tutorials/what-are-skills
+Claude Desktop,Navigating the Claude desktop app,Desktop app,Orientarsi nell’app desktop,https://academy.claude.com/tutorials/navigating-the-claude-desktop-app
+Excel,Getting started with Claude in Excel,Claude in Excel,Impostare l’integrazione e il primo workflow,https://academy.claude.com/tutorials/getting-started-with-claude-in-excel
+Excel / Finance,How to use Claude in Excel for accounting revenue model validation,Claude in Excel,Validare modelli di ricavo e controlli contabili,https://academy.claude.com/tutorials/how-to-use-claude-in-excel-for-accounting-revenue-model-validation
+Excel / HR,How to use Claude in Excel for HR headcount planning,Claude in Excel,Analizzare e pianificare l’organico,https://academy.claude.com/tutorials/how-to-use-claude-in-excel-for-hr-headcount-planning
+AI Fluency,A discussion guide for the AI Fluency Index,AI Fluency Index,Guidare una discussione interna sull’AI fluency del team,https://academy.claude.com/tutorials/a-discussion-guide-for-the-ai-fluency-index
+PowerPoint,Building a PowerPoint with Claude,Claude in PowerPoint,Generare una presentazione da zero senza uscire da PowerPoint,https://academy.claude.com/tutorials/building-a-powerpoint-with-claude
+AI literacy,Can you trust what AI tells you?,Limiti / verifica,Valutare quanto fidarsi di una risposta ben scritta e sicura di sé,https://academy.claude.com/tutorials/can-you-trust-what-ai-tells-you
+Claude Cowork,Choosing between Claude Cowork or Chat,Cowork,Scegliere tra conversazione guidata turno per turno e delega di un obiettivo,https://academy.claude.com/tutorials/choosing-between-claude-cowork-or-chat
+Claude Code,Choosing the right effort level in Claude Code,Effort,Regolare le risorse spese per task e capire quando alzarle o abbassarle,https://academy.claude.com/tutorials/choosing-the-right-effort-level-in-claude-code
+Claude.ai / Team,Claude Cowork Enterprise Admin Guide,Amministrazione,Configurare e governare Cowork a livello enterprise,https://academy.claude.com/tutorials/claude-cowork-enterprise-administrator-guide
+Claude.ai / Team,Claude Enterprise Administrator Guide,Amministrazione,"Le quattro fasi di un deployment enterprise, dal setup tecnico alla scala",https://academy.claude.com/tutorials/claude-enterprise-administrator-guide
+Education,Claude for Teachers in action,Claude for Teachers,Vedere un uso reale e ricorrente di Claude nella pratica didattica,https://academy.claude.com/tutorials/claude-for-teachers-in-action
+Claude Code / Skills,Configuration and multi-file skills,Skills,Configurare skill e strutturarle su più file,https://academy.claude.com/tutorials/configuration-and-multi-file-skills
+Claude.ai,"Connect your tools to unlock a smarter, more capable AI companion",Connettori,Collegare app di terze parti per dare a Claude accesso ai dati,https://academy.claude.com/tutorials/connect-your-tools-to-unlock-a-smarter-more-capable-ai-companion
+Claude.ai,Create and edit files with Claude to eliminate hours of busy work,File,"Far creare e modificare a Claude fogli, documenti, slide e PDF",https://academy.claude.com/tutorials/create-and-edit-files-with-claude-to-eliminate-hours-of-busy-work
+Claude Code / Skills,Creating your first skill,Skills,Creare la prima skill dal setup all’esecuzione,https://academy.claude.com/tutorials/creating-your-first-skill
+Claude Cowork,Delegating and scheduling tasks in Claude Cowork,Cowork,Delegare lavoro multi-step e pianificarlo nel tempo,https://academy.claude.com/tutorials/delegating-and-scheduling-tasks-in-claude-cowork
+Claude Cowork,Get started in Claude Cowork in three steps,Cowork,I tre passi di setup prima del primo task,https://academy.claude.com/tutorials/get-started-in-claude-cowork-in-three-steps
+Claude.ai,Getting started with Claude.ai,Claude.ai,"Prompting, upload, ricerca e funzioni avanzate di Claude.ai",https://academy.claude.com/tutorials/getting-started-with-claude-ai
+Sicurezza,Getting started with Claude Security,Claude Security,Primi passi con le funzioni di sicurezza di Claude,https://academy.claude.com/tutorials/getting-started-with-claude-security
+Claude.ai,Getting started with connectors,Connettori,"Configurare connettori verso file, app e workflow",https://academy.claude.com/tutorials/getting-started-with-connectors
+Claude.ai,How to choose between Claude's Voice Mode and Dictation,Voce,Capire quando serve voice mode e quando basta la dettatura,https://academy.claude.com/tutorials/how-to-choose-between-voice-mode-and-dictation
+Claude Code / Skills,How to create a skill with Claude through conversation,Skills,Far strutturare a Claude una skill descrivendo il workflow a parole,https://academy.claude.com/tutorials/how-to-create-a-skill-with-claude-through-conversation
+Claude.ai / Team,How to enable Claude Code for your Enterprise team,Amministrazione,Aggiungere seat Claude Code al piano enterprise con controllo di spesa,https://academy.claude.com/tutorials/how-to-enable-claude-code-for-your-enterprise-team
+Business,How to install and use the Claude for Small Business plugin,Plugin,Installare e adattare il plugin alla propria piccola impresa,https://academy.claude.com/tutorials/how-to-install-the-claude-for-small-business-plugin
+Claude.ai,How to select the right effort setting for Claude Cowork and Chat,Effort,Regolare l’effort su un modello di frontiera invece di scendere di modello,https://academy.claude.com/tutorials/how-to-select-the-right-effort-setting-for-claude-cowork-and-chat
+Claude.ai,Intro to Projects,Projects,Organizzare conversazioni e contesto ricorrente in Projects,https://academy.claude.com/tutorials/intro-to-projects
+AI literacy,How context affects Claude's performance and cost,Contesto / costi,Distinguere ciò che il modello sa per training da ciò che sta nel contesto,https://academy.claude.com/tutorials/parametric-memory-and-context
+Design,Prototype AI-Powered Apps with Claude artifacts,Artifacts,Prototipare app AI senza gestire chiavi API,https://academy.claude.com/tutorials/prototype-ai-powered-apps-with-claude-artifacts
+PowerPoint,Refining a PowerPoint with Claude,Claude in PowerPoint,Rifinire slide esistenti dalla chat integrata,https://academy.claude.com/tutorials/refining-a-powerpoint-with-claude
+Claude Cowork,Scaling workflows with Claude Cowork at your organization,Cowork,Playbook per estendere Cowork a tutta l’organizzazione,https://academy.claude.com/tutorials/scaling-workflows-with-claude-cowork-at-your-organization
+Claude Code / Skills,Sharing skills,Skills,Condividere skill con il team e con la community,https://academy.claude.com/tutorials/sharing-skills
+Claude.ai,Simplify your browsing experience with Claude in Chrome,Claude in Chrome,Far lavorare Claude nel browser con contesto visivo,https://academy.claude.com/tutorials/simplify-your-browsing-experience-with-claude-for-chrome
+Claude Code / Skills,Teach Claude your way of working using skills,Skills,Impacchettare metodi di lavoro riusabili tra conversazioni,https://academy.claude.com/tutorials/teach-claude-your-way-of-working-using-skills
+AI Fluency,The 4 Properties of AI,4 proprietà,Riferimento rapido su cosa rende l’AI capace in alcuni contesti e limitata in altri,https://academy.claude.com/tutorials/the-4-properties-of-ai
+AI Fluency,Anthropic Education Report: The AI Fluency Index,AI Fluency Index,Gli 11 comportamenti osservabili che misurano la collaborazione con l’AI,https://academy.claude.com/tutorials/the-ai-fluency-index
+AI literacy,Tokens: why some inputs cost more than others,Token / costi,"Capire l’unità di misura di consumo, costo e rate limit",https://academy.claude.com/tutorials/tokens-and-embeddings
+Claude Code / Skills,Troubleshooting skills,Skills,Diagnosticare errori di configurazione e comportamenti inattesi,https://academy.claude.com/tutorials/troubleshooting-skills
+Design,Use artifacts to visualize and create AI apps without ever writing a line of code,Artifacts,"Costruire, personalizzare e condividere mini-app senza scrivere codice",https://academy.claude.com/tutorials/use-artifacts-to-visualize-and-create-ai-apps-without-ever-writing-a-line-of-code
+Claude.ai,Using Research,Research,Usare la funzione Research per attività di pianificazione,https://academy.claude.com/tutorials/using-research
+AI literacy,What does AI know about me?,Privacy,Capire cosa il sistema sa davvero di chi lo usa,https://academy.claude.com/tutorials/what-does-ai-know-about-me
+AI literacy,What happens when you talk to AI?,Modelli,Cosa succede sotto il cofano tra l’invio del messaggio e la risposta,https://academy.claude.com/tutorials/what-happens-when-you-talk-to-ai
+AI literacy,Why does bias exist in AI models?,Limiti / verifica,Riconoscere il bias nelle proprie conversazioni e come mitigarlo,https://academy.claude.com/tutorials/why-does-bias-exist-in-ai-models
+PowerPoint,Working smarter with Claude in PowerPoint,Claude in PowerPoint,Portare dati esterni nel deck e analizzarli senza uscirne,https://academy.claude.com/tutorials/working-smarter-with-claude-in-powerpoint
+AI Fluency,Writing an AI diligence statement,Diligence,Dichiarare in modo trasparente e specifico l’uso di AI nel proprio lavoro,https://academy.claude.com/tutorials/writing-an-ai-diligence-statement

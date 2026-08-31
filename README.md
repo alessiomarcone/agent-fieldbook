@@ -68,7 +68,7 @@ The repository packages the resulting operating layer as:
 
 - **10 focused skills** with classic names such as `/subagent`, `/prompt`, and `/verify`;
 - **2 native plugin manifests** for Claude and Codex;
-- **21 Anthropic courses** and **30 Anthropic tutorials** with direct links;
+- **25 Anthropic courses** and **67 Anthropic tutorials** with direct links;
 - **12 verified OpenAI learning resources**, including three formal Academy courses;
 - **12 distilled Claude knowledge cards** with procedures, failure modes, and checks;
 - **0 runtime credentials, hooks, MCP servers, or background processes**.

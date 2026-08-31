@@ -1,6 +1,6 @@
 ---
 title: "AI literacy — carattere, gap di conoscenza, sycophancy, allucinazioni"
-source_url: "https://claude.com/resources/tutorials"
+source_url: "https://academy.claude.com/tutorials"
 source_type: tutorial
 source_products:
   - "Claude"
@@ -19,6 +19,8 @@ license_note: "Original multi-source synthesis; linked tutorial material and tra
 # AI literacy — carattere, gap di conoscenza, sycophancy, allucinazioni
 
 **Fonti:** transcript dei 4 video tutorial AI Fluency (claude.com/canale Anthropic, sintesi 2026-07-20): how-ai-gets-its-character, understanding-knowledge-gaps, what-is-sycophancy, why-do-ai-models-hallucinate.
+
+> Alcune fonti citate sopra sono state ritirate da Anthropic nel 2026-08: vedi [`knowledge/claude/retired-sources.md`](https://github.com/alessiomarcone/agent-fieldbook/blob/main/knowledge/claude/retired-sources.md).
 
 ## Come nasce il "carattere" di un modello
 Due stadi: **pre-training** (predizione della parola successiva su dati enormi — un completatore di documenti, nessun concetto di "aiutarti") + **fine-tuning** (esempi curati di comportamento utile + segnali di reward da preferenze umane — lo strato che crea l'assistente). Il fine-tuning lascia 4 zone d'ombra da riconoscere:

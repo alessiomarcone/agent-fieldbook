@@ -1,11 +1,11 @@
 {
   "name": "Agent Fieldbook",
-  "version": "1.0.0",
-  "verified_on": "2026-07-22",
+  "version": "1.1.0",
+  "verified_on": "2026-08-31",
   "language": "multilingual",
   "skills": 10,
-  "claude_courses": 21,
-  "claude_tutorials": 30,
+  "claude_courses": 25,
+  "claude_tutorials": 67,
   "codex_learning_resources": 12,
   "knowledge_cards": 12,
   "source_ecosystems": [
