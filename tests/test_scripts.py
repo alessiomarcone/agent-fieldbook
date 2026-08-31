@@ -18,6 +18,7 @@ import download_youtube_transcripts
 import update_youtube_catalog
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+import apply_catalog_updates  # noqa: E402
 import render_catalog  # noqa: E402
 import validate_pack  # noqa: E402
 
@@ -174,6 +175,70 @@ class RenderCatalogTests(unittest.TestCase):
         for path in (render_catalog.COURSES, render_catalog.TUTORIALS):
             for row in render_catalog.read_rows(path):
                 self.assertIn(row["URL"], rendered)
+
+
+class CatalogUpdaterTests(unittest.TestCase):
+    def test_course_metadata_reads_lessons_duration_and_quiz(self) -> None:
+        page = "Courses Claude 101 Learn to use Claude. 13 lessons \ue043 2.5 hr \ue03f 1 quiz Start course Claude Academy"
+        with mock.patch.object(apply_catalog_updates, "page_text", return_value=page):
+            meta = apply_catalog_updates.course_metadata("claude-101")
+        self.assertEqual(meta["lessons"], "13")
+        self.assertEqual(meta["duration"], "2.5 hr")
+        self.assertEqual(meta["quiz"], "1")
+
+    def test_course_without_a_quiz_reports_zero(self) -> None:
+        page = "Courses Playbook A guide. 14 lessons \ue043 1 hr Start course Claude Academy"
+        with mock.patch.object(apply_catalog_updates, "page_text", return_value=page):
+            meta = apply_catalog_updates.course_metadata("ai-native-sdlc-playbook")
+        self.assertEqual(meta["quiz"], "0")
+
+    def test_unreadable_course_page_raises(self) -> None:
+        with mock.patch.object(apply_catalog_updates, "page_text", return_value="nothing useful"):
+            with self.assertRaises(ValueError):
+                apply_catalog_updates.course_metadata("mystery")
+
+    def test_added_rows_carry_placeholders_only_in_curated_columns(self) -> None:
+        section = {"new": ["brand-new"], "retired": []}
+        fields = ["Categoria", "Tutorial", "Prodotto/Funzione", "Obiettivo", "URL"]
+        with (
+            mock.patch.object(apply_catalog_updates, "read_catalog", return_value=(fields, [])),
+            mock.patch.object(apply_catalog_updates, "tutorial_metadata",
+                              return_value={"title": "Brand new", "duration": "4 min"}),
+        ):
+            result = apply_catalog_updates.apply_section("tutorials", section, dry_run=True)
+        self.assertEqual(result["added"], ["brand-new"])
+
+    def test_retired_rows_leave_the_catalog(self) -> None:
+        fields = ["Categoria", "Tutorial", "Prodotto/Funzione", "Obiettivo", "URL"]
+        rows = [{"Categoria": "x", "Tutorial": "Gone", "Prodotto/Funzione": "x",
+                 "Obiettivo": "x", "URL": "https://academy.claude.com/tutorials/gone"}]
+        section = {"new": [], "retired": ["gone"]}
+        with mock.patch.object(apply_catalog_updates, "read_catalog", return_value=(fields, rows)):
+            result = apply_catalog_updates.apply_section("tutorials", section, dry_run=True)
+        self.assertEqual(result["retired"], ["https://academy.claude.com/tutorials/gone"])
+        self.assertEqual(result["rows"], 0)
+
+    def test_placeholder_rows_fail_validation(self) -> None:
+        """A generated row must not be mergeable until a person writes its prose."""
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "tutorials.csv"
+            path.write_text(
+                "Categoria,Tutorial,Prodotto/Funzione,Obiettivo,URL\n"
+                f"{validate_pack.TODO_MARKER} scrivimi,Brand new,x,y,https://academy.claude.com/tutorials/brand-new\n",
+                encoding="utf-8-sig",
+            )
+            errors: list[str] = []
+            validate_pack.validate_catalog(path, 1, errors)
+        self.assertEqual(len(errors), 1)
+        self.assertIn("placeholder", errors[0])
+        self.assertIn("Categoria", errors[0])
+
+    def test_committed_catalogs_carry_no_placeholders(self) -> None:
+        for path in (render_catalog.COURSES, render_catalog.TUTORIALS):
+            errors: list[str] = []
+            rows = render_catalog.read_rows(path)
+            validate_pack.validate_catalog(path, len(rows), errors)
+            self.assertEqual(errors, [], f"{path.name}: {errors}")
 
 
 class RepositoryTests(unittest.TestCase):

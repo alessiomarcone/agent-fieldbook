@@ -9,7 +9,7 @@
       "name": "knowledge-pack",
       "source": "./plugins/knowledge-pack",
       "description": "Ten source-backed skills for structure, prompting, verification, delegation, reusable workflows, and learning.",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "author": {
         "name": "Alessio Marcone"
       }

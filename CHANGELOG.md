@@ -4,6 +4,24 @@ All notable changes are documented here. This project follows [Semantic Versioni
 
 ## [Unreleased]
 
+## [1.2.0] - 2026-08-31
+
+Version 1.1.0 made the weekly check reliable. This one makes it do the work it
+had only been reporting.
+
+### Added
+
+- `scripts/apply_catalog_updates.py`: writes the mechanical half of a catalog update — title, URL, duration, lesson count, and quiz count read from the source page — and moves retired material into `retired-sources.md`. Columns needing judgment are filled with a `TODO:` marker.
+- The weekly workflow opens a pull request with those changes instead of only describing them. It refuses and opens an issue when a run would add more rows than `CATALOG_MAX_NEW` (default 10), or when a source could not be read.
+- Optional auto-merge behind the repository variable `CATALOG_AUTOMERGE`, off by default. It fires only when nothing needs a person, and a diff allowlist refuses anything outside `knowledge/`, the plugin mirrors, and `manifest.json`.
+- Machine-editable markers in `retired-sources.md`.
+
+### Changed
+
+- `make check` now fails on any `TODO:` placeholder in a catalog. This is what keeps a generated row from reaching `main`: a pull request adding material is red until its curated columns are written.
+- `verified_on` advances only on a run that came back clean. A date that moved on every run would make the 45-day freshness guard a rubber stamp.
+- The `source-update` issue is now reserved for changes the bot declined to make on its own, rather than for every catalog change.
+
 ## [1.1.0] - 2026-08-31
 
 Anthropic moved its learning material from `anthropic.skilljar.com` and
@@ -53,6 +71,7 @@ checker scraped the old index pages, so from 2026-08-24 it reported
 - Replaced project-specific skill names with classic public entry points such as `subagent`, `prompt`, and `verify`.
 - Moved canonical material under `knowledge/claude/` and `knowledge/codex/`.
 
-[Unreleased]: https://github.com/alessiomarcone/agent-fieldbook/compare/v1.1.0...HEAD
+[Unreleased]: https://github.com/alessiomarcone/agent-fieldbook/compare/v1.2.0...HEAD
+[1.2.0]: https://github.com/alessiomarcone/agent-fieldbook/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/alessiomarcone/agent-fieldbook/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/alessiomarcone/agent-fieldbook/releases/tag/v1.0.0

@@ -229,6 +229,13 @@ What belongs in the catalog is declared in
 has retired is recorded in
 [retired-sources.md](knowledge/claude/retired-sources.md) rather than deleted.
 
+When the check finds something it can handle, it opens a pull request with the
+mechanical half already written — title, URL, duration, lesson and quiz counts
+read from the source page. The columns that need judgment carry a `TODO:`
+marker that `make check` rejects, so material never reaches `main` without
+someone writing the prose. A run that would add an unusual number of rows, or
+that could not read a source, opens an issue instead of editing anything.
+
 Raw transcripts are never committed. The YouTube pipeline stores only original distilled cards; see [youtube-ingestion-workflow.md](youtube-ingestion-workflow.md).
 
 ## Naming and compatibility

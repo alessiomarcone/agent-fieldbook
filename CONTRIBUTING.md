@@ -62,6 +62,32 @@ never the table.
 - Update counts and `verified_on` in `manifest.json`.
 - Run `make check`.
 
+### Generated pull requests
+
+The weekly check no longer only reports. When it finds a catalog change it can
+handle, `scripts/apply_catalog_updates.py` writes the mechanical half and opens
+a pull request: title, URL, duration, lesson count, and quiz count read from the
+source page, retired material moved to `retired-sources.md`, tables re-rendered,
+mirrors synced, counts updated.
+
+The columns that need judgment — `Categoria`, `Obiettivo`, `Perché è utile` —
+are filled with `TODO:` and `make check` rejects them. **A generated pull
+request that adds material is red on purpose.** Fill the TODO columns, push to
+the branch, and it goes green. Nothing about that is a build failure to debug.
+
+The bot refuses and opens an issue instead when a run would add more rows than
+`CATALOG_MAX_NEW` (default 10), or when it could not read a source. A bulk
+upstream change — a site migration, a section launch — is exactly where an
+unattended edit is wrong.
+
+Optional, off by default: set the repository variable `CATALOG_AUTOMERGE` to
+`true` to let a generated pull request merge itself. It fires only when nothing
+needs a person, which in practice means retirements, and a second gate refuses
+any diff touching paths outside `knowledge/`, the plugin mirrors, and
+`manifest.json`. Pull requests created with `GITHUB_TOKEN` do not trigger other
+workflows, so the merge gate runs `make check` inline rather than waiting on the
+Validate workflow.
+
 ### Scope
 
 `knowledge/claude/catalog-scope.json` declares which Claude Academy material
@@ -83,6 +109,10 @@ deleted row makes a cited source indistinguishable from one that never existed.
 
 `manifest.json` carries `verified_on`. `make check` fails when it is more than
 45 days old, so an unattended catalog breaks CI instead of drifting quietly.
+
+The bot advances that date only on a run that came back clean — no unreadable
+source, nothing to add. A date that moved on every run would be a rubber stamp,
+and the guard would stop meaning anything.
 
 ## Skill changes
 
