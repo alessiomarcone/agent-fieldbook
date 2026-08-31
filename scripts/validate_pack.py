@@ -23,6 +23,9 @@ RESERVED_SKILL_WORDS = {"anthropic", "claude"}
 # A source audit older than this is treated as a failure, not a warning: the
 # whole point of the weekly checker is that nobody notices silent drift.
 MAX_VERIFIED_AGE_DAYS = 45
+# scripts/apply_catalog_updates.py writes this into the columns that need a
+# person. Failing on it is what stops a generated row from reaching main.
+TODO_MARKER = "TODO:"
 BRAND_NAME = "Agent Fieldbook"
 MARKETPLACE_NAME = "agent-fieldbook"
 
@@ -288,6 +291,14 @@ def validate_catalog(
     duplicates = sorted({url for url in urls if url and urls.count(url) > 1})
     if duplicates:
         errors.append(f"{path.name} contains duplicate URLs: {', '.join(duplicates)}")
+    for line, row in enumerate(rows, start=2):
+        pending = sorted(k for k, v in row.items() if v and TODO_MARKER in v)
+        if pending:
+            errors.append(
+                f"{path.name}:{line} still has placeholder values in "
+                f"{', '.join(pending)}; a generated row needs its curated "
+                "columns written before it can be merged"
+            )
 
 
 def validate() -> list[str]:
