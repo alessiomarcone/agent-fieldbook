@@ -82,6 +82,7 @@ Ordine: **Claude Platform 101 → Building with the Claude API → Introduction 
 | Education | [AI Fluency for pK-12 Train the Trainer](https://academy.claude.com/courses/ai-fluency-for-pk-12-train-the-trainer) | Intermedio | 45 min | 4 | Kit di workshop pronto all’uso per formare altri docenti pK-12 sul framework 4D. |
 | Claude Code | [The AI-Native SDLC Playbook](https://academy.claude.com/courses/ai-native-sdlc-playbook) | Intermedio–avanzato | 1 hr | 14 | Ridisegnare planning, review, test e deploy quando gran parte del codice la scrivono gli agenti. |
 | Business | [Deploying Claude Enterprise with Confidence](https://academy.claude.com/courses/deploying-claude-enterprise-with-confidence) | Intermedio | 2.5 hr | 14 | Le cinque decisioni che definiscono un rollout enterprise: struttura e identità, accessi, governance, spesa, visibilità. |
+| TODO: da scrivere a mano | [Building Effective Human Agent Teams (Beta)](https://academy.claude.com/courses/building-effective-human-agent-teams) | TODO: da scrivere a mano | 45 min | 5 | TODO: da scrivere a mano |
 <!-- catalog:courses:end -->
 
 ## Tutorial ufficiali selezionati e catalogati
