@@ -4,6 +4,14 @@ All notable changes are documented here. This project follows [Semantic Versioni
 
 ## [Unreleased]
 
+### Added
+
+- Building Effective Human Agent Teams (Beta) and Anthropic Education Report: How people check Claude's work, with source-backed Italian catalog descriptions. The catalogs now contain 26 courses and 68 tutorials.
+
+### Changed
+
+- Refreshed catalog counts and recorded the clean source and link check of 2026-09-14.
+
 ## [1.2.0] - 2026-08-31
 
 Version 1.1.0 made the weekly check reliable. This one makes it do the work it
