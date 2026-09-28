@@ -83,6 +83,7 @@ Ordine: **Claude Platform 101 → Building with the Claude API → Introduction 
 | Claude Code | [The AI-Native SDLC Playbook](https://academy.claude.com/courses/ai-native-sdlc-playbook) | Intermedio–avanzato | 1 hr | 14 | Ridisegnare planning, review, test e deploy quando gran parte del codice la scrivono gli agenti. |
 | Business | [Deploying Claude Enterprise with Confidence](https://academy.claude.com/courses/deploying-claude-enterprise-with-confidence) | Intermedio | 2.5 hr | 14 | Le cinque decisioni che definiscono un rollout enterprise: struttura e identità, accessi, governance, spesa, visibilità. |
 | Agenti / Team | [Building Effective Human Agent Teams (Beta)](https://academy.claude.com/courses/building-effective-human-agent-teams) | Base | 45 min | 5 | Preparare il team alla collaborazione con agenti: ruoli chiari, obiettivo condiviso, delega graduale e accesso alle informazioni. |
+| TODO: da scrivere a mano | [Introduction to Claude Tag](https://academy.claude.com/courses/introduction-to-claude-tag) | TODO: da scrivere a mano | 2.5 hr | 11 | TODO: da scrivere a mano |
 <!-- catalog:courses:end -->
 
 ## Tutorial ufficiali selezionati e catalogati
@@ -130,7 +131,6 @@ Ordine: **Claude Platform 101 → Building with the Claude API → Introduction 
 | Claude Code / Skills | [Creating your first skill](https://academy.claude.com/tutorials/creating-your-first-skill) | Skills | Creare la prima skill dal setup all’esecuzione |
 | Claude Cowork | [Delegating and scheduling tasks in Claude Cowork](https://academy.claude.com/tutorials/delegating-and-scheduling-tasks-in-claude-cowork) | Cowork | Delegare lavoro multi-step e pianificarlo nel tempo |
 | Claude Cowork | [Get started in Claude Cowork in three steps](https://academy.claude.com/tutorials/get-started-in-claude-cowork-in-three-steps) | Cowork | I tre passi di setup prima del primo task |
-| Claude.ai | [Getting started with Claude.ai](https://academy.claude.com/tutorials/getting-started-with-claude-ai) | Claude.ai | Prompting, upload, ricerca e funzioni avanzate di Claude.ai |
 | Sicurezza | [Getting started with Claude Security](https://academy.claude.com/tutorials/getting-started-with-claude-security) | Claude Security | Primi passi con le funzioni di sicurezza di Claude |
 | Claude.ai | [Getting started with connectors](https://academy.claude.com/tutorials/getting-started-with-connectors) | Connettori | Configurare connettori verso file, app e workflow |
 | Claude.ai | [How to choose between Claude's Voice Mode and Dictation](https://academy.claude.com/tutorials/how-to-choose-between-voice-mode-and-dictation) | Voce | Capire quando serve voice mode e quando basta la dettatura |
@@ -158,6 +158,9 @@ Ordine: **Claude Platform 101 → Building with the Claude API → Introduction 
 | PowerPoint | [Working smarter with Claude in PowerPoint](https://academy.claude.com/tutorials/working-smarter-with-claude-in-powerpoint) | Claude in PowerPoint | Portare dati esterni nel deck e analizzarli senza uscirne |
 | AI Fluency | [Writing an AI diligence statement](https://academy.claude.com/tutorials/writing-an-ai-diligence-statement) | Diligence | Dichiarare in modo trasparente e specifico l’uso di AI nel proprio lavoro |
 | AI Fluency | [Anthropic Education Report: How people check Claude's work](https://academy.claude.com/tutorials/discernment-toolkit) | Discernment | Verificare il lavoro di Claude con fonti esterne, test, review indipendenti e competenze di dominio |
+| TODO: da scrivere a mano | [Building AI-fluent organizations](https://academy.claude.com/tutorials/building-ai-fluent-organizations) | TODO: da scrivere a mano | TODO: da scrivere a mano |
+| TODO: da scrivere a mano | [Claude Tag admin guide](https://academy.claude.com/tutorials/claude-tag-admin-guide) | TODO: da scrivere a mano | TODO: da scrivere a mano |
+| TODO: da scrivere a mano | [Getting started with Claude](https://academy.claude.com/tutorials/getting-started-with-claude) | TODO: da scrivere a mano | TODO: da scrivere a mano |
 <!-- catalog:tutorials:end -->
 
 ## Canale YouTube ufficiale
