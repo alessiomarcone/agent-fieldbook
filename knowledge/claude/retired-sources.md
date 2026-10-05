@@ -21,3 +21,6 @@ alcuni slug, promosso alcuni tutorial a lezioni di corso e ritirato le voci
 qui elencate. Cancellare le righe da un catalogo senza registrarle rende
 impossibile capire, più avanti, se una fonte citata da una card sia stata persa
 o non sia mai esistita.
+<!-- retired:start -->
+| Getting started with Claude.ai | https://academy.claude.com/tutorials/getting-started-with-claude-ai | non più pubblicato, rilevato il 2026-10-05 | Nessun sostituto rilevato automaticamente. |
+<!-- retired:end -->
